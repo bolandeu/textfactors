@@ -34,6 +34,7 @@ def test_public_exports_and_generated_command_help() -> None:
         "check_keywords",
         "compare",
         "compare_with_set",
+        "keyword_targets",
         "measure_html",
         "measure_text",
     }

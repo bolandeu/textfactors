@@ -244,3 +244,41 @@ def check_html_keywords(
         "unmet": result["unmet"],
         "quality": {"accepted": quality["accepted"], "score": quality["score"]},
     }
+
+
+def keyword_targets(
+    own: dict,
+    items: list[dict],
+    *,
+    block: str = "text",
+    share: float = 0.6,
+    min_key_count: int = 1,
+    min_length: int = 3,
+) -> dict:
+    """Compute how many occurrences each peer keyword needs on the own page.
+
+    Args:
+        own: The measured result to improve, with a blocks mapping.
+        items: Reference results with blocks mappings.
+        block: Block whose repeat table is used; ``text`` by default.
+        share: Minimum share of reference pages that must carry the keyword.
+        min_key_count: Minimum occurrences of a keyword in one reference page.
+        min_length: Minimum keyword length in characters; drops stray letters.
+
+    Returns:
+        One row per keyword: own count, target count from the median peer density,
+        the difference, peer coverage and that median density, plus block metadata.
+
+    Raises:
+        ValueError: The own result, the set, or an option is invalid.
+    """
+    from .core import targets
+
+    return targets.keyword_targets(
+        own,
+        items,
+        block=block,
+        share=share,
+        min_key_count=min_key_count,
+        min_length=min_length,
+    )

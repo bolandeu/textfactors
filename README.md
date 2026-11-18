@@ -167,6 +167,19 @@ Counts never overlap: each occurrence is classified by the first enabled rule
 that matches. `density` is the found count per 100 words. Without `targets`,
 `met` is `null` and only counts are reported.
 
+`keyword_targets` turns peer densities into occurrence targets: it takes the
+median density of a keyword across reference pages, applies it to the own word
+count, and reports `own`, `target`, `add`, `peers`, `share` and `density`.
+Rows are sorted by what to add.
+
+```python
+from rb_textfactors import keyword_targets
+
+plan = keyword_targets(own_measure, competitor_measures, block="text", share=0.6)
+for row in plan["keywords"][:5]:
+    print(row["keyword"], row["own"], "->", row["target"])
+```
+
 For HTML, `check_html_keywords` applies the same page cleanup and checks one
 zone: `text` (default), `headings`, `links`, `text_links`, `title`, `h1` or
 `meta_description`. The result adds the zone name and the page quality verdict.

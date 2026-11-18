@@ -6,6 +6,7 @@ from .operations import (
     check_keywords,
     compare,
     compare_with_set,
+    keyword_targets,
     measure_html,
     measure_text,
 )
@@ -16,6 +17,7 @@ __all__ = [
     "check_keywords",
     "compare",
     "compare_with_set",
+    "keyword_targets",
     "measure_html",
     "measure_text",
 ]

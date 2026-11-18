@@ -17,6 +17,8 @@
   and densities for text water.
 - Add a `page` block with the full visible page text, so volume can be compared
   with external services without changing the service-text blocks.
+- Add `keyword_targets` / `textfactors run keyword-targets`: occurrence targets
+  from median peer density, with own count, difference and peer coverage.
 
 ## [0.1.0]
 
