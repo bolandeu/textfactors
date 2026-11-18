@@ -24,6 +24,11 @@ For `measure-html`, a Spider JSONL stream with an `html` field on each row
 also works. Check the fetch status before comparison; the measurement ignores
 metadata fields. Set `top_n` in the JSON object if you need shorter tables.
 
+`stop_words` lists the words that make water, with counts and densities, so a
+report can name them. `structure` counts H1–H6, list items and tables. Anchors
+are separate: `text` has no link words, `links` has only them, `text_links` has
+both.
+
 For comparisons, place a plain-text measurement at `blocks.text` in a JSON
 object. HTML measurements already have `blocks`. Missing-key analysis uses
 only the rows present in `repeat_words_1` of `text` and `text_links`, so use

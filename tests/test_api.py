@@ -44,6 +44,7 @@ def test_worked_text_from_reference() -> None:
     assert tuple(result) == (
         *NUMBERS,
         "norms",
+        "stop_words",
         "repeat_words_1",
         "repeat_words_2",
         "repeat_words_3",
@@ -320,3 +321,17 @@ def test_measurements_compose_without_modifying_inputs() -> None:
         {"block": "text_links", "key": "доставка", "share": 1, "density": 40},
     ]
     assert (own, competitor) == (original_own, original_competitor)
+
+
+def test_stop_words_list_shows_what_makes_water() -> None:
+    text = "Это и как, это нужно."
+    result = measure_text(text)
+    rows = {row["word"]: row for row in result["stop_words"]}
+    assert rows["это"]["count"] == 2
+    assert rows["и"]["count"] == 1
+    assert all(
+        row["density"] == round(row["count"] / result["words_total"] * 100, 3)
+        for row in result["stop_words"]
+    )
+    assert measure_text(text, top_n=1)["stop_words"] == result["stop_words"][:1]
+    assert measure_text("Доставка грузов")["stop_words"] == []

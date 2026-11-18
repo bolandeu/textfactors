@@ -7,6 +7,16 @@ import pytest
 
 from rb_textfactors import measure_html, measure_text
 
+
+def contains(expected: object, actual: object) -> bool:
+    """Reference captures predate our extra keys: lists exact, dicts as a subset."""
+    if isinstance(expected, dict):
+        return isinstance(actual, dict) and all(
+            key in actual and contains(value, actual[key]) for key, value in expected.items()
+        )
+    return expected == actual
+
+
 FIXTURES = Path(__file__).parent / "fixtures"
 PAGES = sorted((FIXTURES / "pages").glob("*.html"))
 BLOCKS = ("text", "headings", "links", "text_links", "title", "h1", "meta_description")
@@ -29,7 +39,7 @@ def test_page_matches_reference_capture(page: Path) -> None:
     }
     result = measure_html(page.read_text(encoding="utf-8"))
     assert tuple(result["blocks"]) == BLOCKS
-    assert result == expected
+    assert contains(expected, result)
 
 
 def test_html_drops_noindex_and_nested_noise_but_retains_links_and_structure() -> None:
@@ -57,6 +67,9 @@ def test_html_drops_noindex_and_nested_noise_but_retains_links_and_structure() -
             "h1_count": 1,
             "h2_count": 1,
             "h3_count": 1,
+            "h4_count": 0,
+            "h5_count": 0,
+            "h6_count": 0,
             "li_count": 2,
             "table_count": 2,
             "heading_tree": [
@@ -147,3 +160,12 @@ def test_plain_page_and_empty_html() -> None:
     assert result["structure"]["heading_tree"] == []
     with pytest.raises(ValueError, match="html"):
         measure_html(" \n ")
+
+
+def test_structure_counts_headings_up_to_h6() -> None:
+    html = (
+        "<h1>А</h1><h2>Б</h2><h3>В</h3><h4>Г</h4><h5>Д</h5><h6>Е</h6><h4>Ж</h4><p>Текст статьи.</p>"
+    )
+    structure = measure_html(html)["structure"]
+    assert [structure[f"h{level}_count"] for level in range(1, 7)] == [1, 1, 1, 2, 1, 1]
+    assert structure["heading_tree"][0]["children"][0]["children"][0]["children"][0]["text"] == "Г"

@@ -108,13 +108,18 @@ pair = compare(own, page, blocks=["text"])
 against_set = compare_with_set(own, [page], share=0.6, blocks=["text"])
 ```
 
-`measure_text` returns one block of 12 metrics, norms and repeat tables. Wrap
+`measure_text` returns one block of 12 metrics, norms, a `stop_words` list with
+counts and densities, and repeat tables. Wrap
 it under `blocks.text` for comparisons. `measure_html` already returns a
 `blocks` mapping, along with `structure` and `quality`. A quality rejection
 still returns the blocks. `average` uses nearest-rank quartiles. A set
 comparison computes its corridor from the reference items alone and reads
 missing keys from the `text` and `text_links` repeat tables; use full repeat
 tables for this analysis (`top_n=0`).
+
+The `structure` map counts headings from H1 to H6 plus list items, tables and
+the heading tree. Link text is measured separately: `text` excludes anchor
+words, `links` holds only them, and `text_links` contains both.
 
 Before counting, `measure_html` drops page chrome: scripts, styles, navigation,
 footer, aside, forms, reviews widgets (`.rb-reviews`, Trustindex, WP Google

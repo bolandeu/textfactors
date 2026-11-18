@@ -108,6 +108,19 @@ def _rows(
     return rows[:top_n] if top_n else rows
 
 
+def _stop_rows(stops: Counter[str], words_total: int, top_n: int) -> list[dict]:
+    rows = [
+        {
+            "word": word,
+            "count": count,
+            "density": round(count / words_total * 100, 3) if words_total else 0.0,
+        }
+        for word, count in stops.items()
+    ]
+    rows.sort(key=lambda row: row["count"], reverse=True)
+    return rows[:top_n] if top_n else rows
+
+
 def _norms(classic: float, academic: float, water: float) -> dict[str, str]:
     if academic < 3:
         academic_label = "мало повторов"
@@ -170,6 +183,9 @@ def measure_text(
     stops = sum(word.stop for words in sentences for word in words)
     ignored = sum(word.ignore for words in sentences for word in words)
     found, forms = _words_table(sentences)
+    stop_counter = Counter(
+        word.lemma for words in sentences for word in words if word.stop and not word.ignore
+    )
     words_count = words_total - stops - ignored
     roots = len(found)
     top = max(found.values(), default=0)
@@ -192,6 +208,7 @@ def measure_text(
         "ttr": round(roots / words_count, 3) if words_count else 0.0,
         "mtld": mtld or (float(roots) if roots > 1 else 0.0),
         "norms": _norms(classic, academic, water),
+        "stop_words": _stop_rows(stop_counter, words_total, top_n),
         "repeat_words_1": _rows(found, forms, words_count, top_n),
         "repeat_words_2": _rows(_grams(clauses, 2), None, words_count, top_n),
         "repeat_words_3": _rows(_grams(clauses, 3), None, words_count, top_n),

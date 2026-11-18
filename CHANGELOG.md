@@ -13,6 +13,8 @@
   diluted, reverse and any-word occurrence counts with density and optional targets.
 - Add `check_html_keywords` / `textfactors run check-html-keywords`: same checks
   on a cleaned page zone, with `--file` support.
+- Count headings from H1 to H6 in `structure`; report `stop_words` with counts
+  and densities for text water.
 
 ## [0.1.0]
 

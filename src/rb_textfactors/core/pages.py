@@ -182,14 +182,11 @@ def _heading_tree(headings: list[tuple[int, str]]) -> list[Heading]:
 def _structure(clean: str, headings: list[tuple[int, str]]) -> dict:
     tree = LexborHTMLParser(clean)
     levels = Counter(level for level, _ in headings)
-    return {
-        "h1_count": levels[1],
-        "h2_count": levels[2],
-        "h3_count": levels[3],
-        "li_count": len(tree.css("li")),
-        "table_count": len(tree.css("table")),
-        "heading_tree": _heading_tree(headings),
-    }
+    structure: dict[str, object] = {f"h{level}_count": levels[level] for level in range(1, 7)}
+    structure["li_count"] = len(tree.css("li"))
+    structure["table_count"] = len(tree.css("table"))
+    structure["heading_tree"] = _heading_tree(headings)
+    return structure
 
 
 def _flags(html: str, text: str, words: int, unique_words: int) -> list[str]:
