@@ -7,7 +7,16 @@ import pytest
 
 from rb_textfactors import average, compare, compare_with_set, measure_html, measure_text
 
-BLOCKS = ("text", "headings", "links", "text_links", "title", "h1", "meta_description")
+BLOCKS = (
+    "text",
+    "headings",
+    "links",
+    "text_links",
+    "title",
+    "h1",
+    "meta_description",
+    "page",
+)
 NUMBERS = (
     "length",
     "length_trim",
@@ -132,7 +141,7 @@ def test_average_uses_nearest_rank_and_only_items_carrying_the_block() -> None:
                 },
             },
         },
-        "skipped": ["headings", "links", "text_links", "title", "meta_description"],
+        "skipped": ["headings", "links", "text_links", "title", "meta_description", "page"],
     }
     assert items == original
     assert average(items, blocks=[]) == {"items": 11, "blocks": {}, "skipped": []}

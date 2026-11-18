@@ -117,6 +117,11 @@ comparison computes its corridor from the reference items alone and reads
 missing keys from the `text` and `text_links` repeat tables; use full repeat
 tables for this analysis (`top_n=0`).
 
+Two volumes are reported. `text` is the service text after page chrome is
+removed; `page` is all visible page text, menu and footer included, scripts
+excluded. Use `page` to compare volume with external services and `text` for
+content work.
+
 The `structure` map counts headings from H1 to H6 plus list items, tables and
 the heading tree. Link text is measured separately: `text` excludes anchor
 words, `links` holds only them, and `text_links` contains both.

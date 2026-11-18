@@ -19,7 +19,16 @@ def contains(expected: object, actual: object) -> bool:
 
 FIXTURES = Path(__file__).parent / "fixtures"
 PAGES = sorted((FIXTURES / "pages").glob("*.html"))
-BLOCKS = ("text", "headings", "links", "text_links", "title", "h1", "meta_description")
+BLOCKS = (
+    "text",
+    "headings",
+    "links",
+    "text_links",
+    "title",
+    "h1",
+    "meta_description",
+    "page",
+)
 
 
 def test_each_fixture_has_a_reference_capture() -> None:
@@ -59,7 +68,10 @@ def test_html_drops_noindex_and_nested_noise_but_retains_links_and_structure() -
         "<noindex><p>Исключить</p><ul><li>Исключить</li></ul></noindex>"
         '<!--noindex--><a href="/">Исключить</a><!--/noindex--></body></html>'
     )
-    assert noisy["blocks"] == clean["blocks"]
+    assert {k: v for k, v in noisy["blocks"].items() if k != "page"} == {
+        k: v for k, v in clean["blocks"].items() if k != "page"
+    }
+    assert noisy["blocks"]["page"]["words_total"] > clean["blocks"]["page"]["words_total"]
     assert (
         noisy["structure"]
         == clean["structure"]
@@ -169,3 +181,14 @@ def test_structure_counts_headings_up_to_h6() -> None:
     structure = measure_html(html)["structure"]
     assert [structure[f"h{level}_count"] for level in range(1, 7)] == [1, 1, 1, 2, 1, 1]
     assert structure["heading_tree"][0]["children"][0]["children"][0]["children"][0]["text"] == "Г"
+
+
+def test_page_block_keeps_chrome_for_volume_comparison() -> None:
+    html = (
+        "<nav><a href='/'>Меню сайта</a></nav><h1>Услуга</h1>"
+        "<p>Текст услуги.</p><footer>Подвал и контакты</footer>"
+    )
+    result = measure_html(html)
+    assert result["blocks"]["text"]["words_total"] == 2
+    assert result["blocks"]["page"]["words_total"] == 8
+    assert result["blocks"]["text_links"]["words_total"] == 3

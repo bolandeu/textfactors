@@ -24,6 +24,10 @@ For `measure-html`, a Spider JSONL stream with an `html` field on each row
 also works. Check the fetch status before comparison; the measurement ignores
 metadata fields. Set `top_n` in the JSON object if you need shorter tables.
 
+Two volumes exist: `text` is the service text without page chrome, `page` is
+all visible text of the page with menu and footer. Compare volume with other
+tools by `page`; write recommendations by `text`.
+
 `stop_words` lists the words that make water, with counts and densities, so a
 report can name them. `structure` counts H1–H6, list items and tables. Anchors
 are separate: `text` has no link words, `links` has only them, `text_links` has

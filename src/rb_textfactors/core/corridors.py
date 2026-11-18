@@ -5,7 +5,16 @@ import statistics
 
 from .errors import InvalidArguments
 
-BLOCKS = ("text", "headings", "links", "text_links", "title", "h1", "meta_description")
+BLOCKS = (
+    "text",
+    "headings",
+    "links",
+    "text_links",
+    "title",
+    "h1",
+    "meta_description",
+    "page",
+)
 ROUND_TO = 3
 MeasureBlocks = dict[str, dict | None]
 

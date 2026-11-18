@@ -15,6 +15,8 @@
   on a cleaned page zone, with `--file` support.
 - Count headings from H1 to H6 in `structure`; report `stop_words` with counts
   and densities for text water.
+- Add a `page` block with the full visible page text, so volume can be compared
+  with external services without changing the service-text blocks.
 
 ## [0.1.0]
 

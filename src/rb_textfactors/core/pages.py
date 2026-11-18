@@ -143,10 +143,21 @@ def _without_headings(text: str, headings: list[tuple[int, str]]) -> str:
     return " ".join(text.split())
 
 
+def _page_text(html: str) -> str:
+    """All visible page text: menu, footer and widgets included, scripts excluded."""
+    tree = LexborHTMLParser(html)
+    for node in reversed(tree.css("script, style, noscript, template, svg, canvas")):
+        node.decompose()
+    body = tree.body
+    return " ".join((body.text(separator=" ") or "").split()) if body is not None else ""
+
+
 def _blocks(html: str, clean: str, headings: list[tuple[int, str]]) -> dict[str, str]:
     if "<" not in html:
         plain = " ".join(html.split())
-        return {name: plain if name in ("text", "text_links") else "" for name in BLOCKS}
+        blocks = {name: plain if name in ("text", "text_links") else "" for name in BLOCKS}
+        blocks["page"] = plain
+        return blocks
     page = parse_html(pd.Series([clean]), drop_noindex=True).iloc[0]
     return {
         "text": _without_headings(page["text"], headings),
@@ -156,6 +167,7 @@ def _blocks(html: str, clean: str, headings: list[tuple[int, str]]) -> dict[str,
         "title": page["title"],
         "h1": page["h1"],
         "meta_description": page["description"],
+        "page": _page_text(html),
     }
 
 
