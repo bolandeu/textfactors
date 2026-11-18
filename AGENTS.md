@@ -21,6 +21,9 @@
 ## Develop the library first
 
 - Start from the requested behavior and write a concrete success case and a failure case. Choose the Python API yourself; ask only about product behavior or risky actions.
+- When replacing the starter example, describe what the library actually does
+  in `README.md` and `[project].description` in `pyproject.toml`. Replace the
+  demo invocations in the README with working Python and CLI examples.
 - Keep algorithms in typed Python functions. Use Google-style docstrings with arguments, results, relevant exceptions and side effects. Test public behavior, not internals.
 - Use Pydantic v2 for structured boundary data. Keep simple parameters and results as ordinary Python types.
 - Re-export the public API from the package and keep `__all__` explicit. Imported types, clients and helpers are not CLI commands.
