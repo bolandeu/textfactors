@@ -58,6 +58,7 @@ def keyword_targets(
     share: float = DEFAULT_SHARE,
     min_key_count: int = 1,
     min_length: int = DEFAULT_MIN_LENGTH,
+    min_sites: int = 0,
 ) -> dict:
     """Compute how many occurrences each peer keyword needs on the own page.
 
@@ -68,6 +69,8 @@ def keyword_targets(
         share: Minimum share of reference pages that must carry the keyword.
         min_key_count: Minimum occurrences of a keyword in one reference page.
         min_length: Minimum keyword length in characters; drops stray letters.
+        min_sites: Include a keyword carried by at least this many pages even below
+            ``share``. Zero disables the rule.
 
     Returns:
         The block, its word count, and one row per keyword with the own count, the
@@ -78,6 +81,8 @@ def keyword_targets(
         ValueError: The own result, the set, or an option is invalid.
     """
     _check_options(block, share, min_key_count, min_length)
+    if isinstance(min_sites, bool) or not isinstance(min_sites, int) or min_sites < 0:
+        raise InvalidArguments("min_sites must be a whole number of 0 or more.")
     mine = measured_blocks(own, "own")
     references = measured_set(items)
     page = mine.get(block)
@@ -100,7 +105,7 @@ def keyword_targets(
     rows: list[KeywordTarget] = []
     for key, densities in found.items():
         coverage = len(densities) / len(pages)
-        if coverage < share:
+        if coverage < share and not (min_sites and len(densities) >= min_sites):
             continue
         median = statistics.median(densities)
         target = round(median * words / 100)

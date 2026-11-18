@@ -167,10 +167,16 @@ Counts never overlap: each occurrence is classified by the first enabled rule
 that matches. `density` is the found count per 100 words. Without `targets`,
 `met` is `null` and only counts are reported.
 
+`measure_text` also returns `nested_ngrams`: each bigram split into `standalone`
+and `nested` counts, where nested means the bigram is covered by a trigram in
+the same sentence. Use it to avoid asking for a phrase that already lives
+inside a longer one.
+
 `keyword_targets` turns peer densities into occurrence targets: it takes the
 median density of a keyword across reference pages, applies it to the own word
 count, and reports `own`, `target`, `add`, `peers`, `share` and `density`.
-Rows are sorted by what to add.
+Rows are sorted by what to add. `min_sites` keeps a keyword that appears on at
+least that many pages even below `share`.
 
 ```python
 from rb_textfactors import keyword_targets

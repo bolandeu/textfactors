@@ -254,6 +254,7 @@ def keyword_targets(
     share: float = 0.6,
     min_key_count: int = 1,
     min_length: int = 3,
+    min_sites: int = 0,
 ) -> dict:
     """Compute how many occurrences each peer keyword needs on the own page.
 
@@ -264,6 +265,8 @@ def keyword_targets(
         share: Minimum share of reference pages that must carry the keyword.
         min_key_count: Minimum occurrences of a keyword in one reference page.
         min_length: Minimum keyword length in characters; drops stray letters.
+        min_sites: Include a keyword carried by at least this many pages even below
+            ``share``. Zero disables the rule.
 
     Returns:
         One row per keyword: own count, target count from the median peer density,
@@ -281,4 +284,5 @@ def keyword_targets(
         share=share,
         min_key_count=min_key_count,
         min_length=min_length,
+        min_sites=min_sites,
     )

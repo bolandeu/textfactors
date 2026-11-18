@@ -57,6 +57,7 @@ def test_worked_text_from_reference() -> None:
         "repeat_words_1",
         "repeat_words_2",
         "repeat_words_3",
+        "nested_ngrams",
     )
     assert tuple(result[name] for name in NUMBERS) == (48, 40, 1, 7, 4, 4, 28.57, 1, 14.29, 0, 1, 4)
     assert result["norms"] == {
@@ -344,3 +345,17 @@ def test_stop_words_list_shows_what_makes_water() -> None:
     )
     assert measure_text(text, top_n=1)["stop_words"] == result["stop_words"][:1]
     assert measure_text("Доставка грузов")["stop_words"] == []
+
+
+def test_nested_bigrams_are_split_from_standalone_ones() -> None:
+    text = "Таможенный представитель работает. Представитель помогает."
+    rows = {row["key"]: row for row in measure_text(text)["nested_ngrams"]}
+    assert rows["таможенный представитель"] == {
+        "key": "таможенный представитель",
+        "count": 1,
+        "standalone": 0,
+        "nested": 1,
+        "nested_share": 1.0,
+    }
+    assert rows["представитель помогать"]["standalone"] == 1
+    assert rows["представитель помогать"]["nested"] == 0

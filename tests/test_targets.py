@@ -77,3 +77,15 @@ def test_pages_without_the_block_are_skipped_for_coverage() -> None:
 def test_invalid_input_raises_value_error(arguments: dict) -> None:
     with pytest.raises(ValueError):
         keyword_targets(**arguments)
+
+
+def test_min_sites_includes_a_keyword_below_the_share() -> None:
+    own = page(100, [])
+    items = [
+        page(100, [("склад", 2, 2.0)]),
+        page(100, [("склад", 2, 4.0)]),
+        page(100, [("другое", 2, 5.0)]),
+    ]
+    assert keyword_targets(own, items, share=0.9)["keywords"] == []
+    rows = keyword_targets(own, items, share=0.9, min_sites=2)["keywords"]
+    assert [row["keyword"] for row in rows] == ["склад"]

@@ -79,6 +79,49 @@ def _grams(clauses: list[list[Word]], n: int) -> Counter[str]:
     return found
 
 
+def _spans(clauses: list[list[Word]], size: int) -> dict[int, set[tuple[int, int]]]:
+    """Valid spans of size content words, keyed by clause index and place positions."""
+    spans: dict[int, set[tuple[int, int]]] = {}
+    for index, words in enumerate(clauses):
+        places = [place for place, word in enumerate(words) if word.counts]
+        for start in range(len(places) - size + 1):
+            span = words[places[start] : places[start + size - 1] + 1]
+            if any(left.lemma == right.lemma for left, right in pairwise(span)):
+                continue
+            spans.setdefault(index, set()).add((start, start + size - 1))
+    return spans
+
+
+def _nesting(clauses: list[list[Word]], top_n: int) -> list[dict]:
+    """Split bigrams into standalone and covered by a trigram."""
+    trigrams = _spans(clauses, 3)
+    total: Counter[str] = Counter()
+    nested: Counter[str] = Counter()
+    for index, words in enumerate(clauses):
+        places = [place for place, word in enumerate(words) if word.counts]
+        found = trigrams.get(index, set())
+        for start in range(len(places) - 1):
+            span = words[places[start] : places[start + 1] + 1]
+            if any(left.lemma == right.lemma for left, right in pairwise(span)):
+                continue
+            key = " ".join(word.lemma for word in span)
+            total[key] += 1
+            if (start - 1, start + 1) in found or (start, start + 2) in found:
+                nested[key] += 1
+    rows = [
+        {
+            "key": key,
+            "count": count,
+            "standalone": count - nested[key],
+            "nested": nested[key],
+            "nested_share": round(nested[key] / count, 3) if count else 0.0,
+        }
+        for key, count in total.items()
+    ]
+    rows.sort(key=lambda row: row["count"], reverse=True)
+    return rows[:top_n] if top_n else rows
+
+
 def _words_table(sentences: list[list[Word]]) -> tuple[Counter[str], dict[str, list[str]]]:
     found: Counter[str] = Counter()
     forms: dict[str, list[str]] = {}
@@ -212,4 +255,5 @@ def measure_text(
         "repeat_words_1": _rows(found, forms, words_count, top_n),
         "repeat_words_2": _rows(_grams(clauses, 2), None, words_count, top_n),
         "repeat_words_3": _rows(_grams(clauses, 3), None, words_count, top_n),
+        "nested_ngrams": _nesting(clauses, top_n),
     }

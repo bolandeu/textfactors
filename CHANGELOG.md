@@ -18,7 +18,9 @@
 - Add a `page` block with the full visible page text, so volume can be compared
   with external services without changing the service-text blocks.
 - Add `keyword_targets` / `textfactors run keyword-targets`: occurrence targets
-  from median peer density, with own count, difference and peer coverage.
+  from median peer density, with own count, difference, peer coverage and
+  `min_sites`.
+- Split bigrams into `standalone` and `nested` counts in `nested_ngrams`.
 
 ## [0.1.0]
 
