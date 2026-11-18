@@ -1,0 +1,15 @@
+[project]
+site_name = "rb-textfactors"
+site_description = "A typed Python library with a generated CLI."
+nav = [
+    { Overview = "index.md" },
+    { "API reference" = "reference/api.md" },
+]
+
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+show_root_heading = true
+show_signature_annotations = true

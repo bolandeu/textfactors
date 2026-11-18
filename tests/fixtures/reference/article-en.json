@@ -1,0 +1,3683 @@
+{
+  "zones": {
+    "text": {
+      "length": 952,
+      "length_trim": 774,
+      "sentences": 14,
+      "words_total": 178,
+      "words_count": 112,
+      "words_root_count": 85,
+      "water_percent": 37.08,
+      "nausea_classic": 2.0,
+      "nausea_academic": 2.25,
+      "zipf_quality": 81.1,
+      "ttr": 0.759,
+      "mtld": 130.09,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "route",
+          "count": 4,
+          "density": 3.571,
+          "example": "route"
+        },
+        {
+          "key": "traffic",
+          "count": 3,
+          "density": 2.679,
+          "example": "traffic"
+        },
+        {
+          "key": "surface",
+          "count": 3,
+          "density": 2.679,
+          "example": "surface, Surface"
+        },
+        {
+          "key": "street",
+          "count": 3,
+          "density": 2.679,
+          "example": "street"
+        },
+        {
+          "key": "time",
+          "count": 3,
+          "density": 2.679,
+          "example": "time"
+        },
+        {
+          "key": "left",
+          "count": 3,
+          "density": 2.679,
+          "example": "left"
+        },
+        {
+          "key": "line",
+          "count": 2,
+          "density": 1.786,
+          "example": "line"
+        },
+        {
+          "key": "rider",
+          "count": 2,
+          "density": 1.786,
+          "example": "rider"
+        },
+        {
+          "key": "every",
+          "count": 2,
+          "density": 1.786,
+          "example": "every"
+        },
+        {
+          "key": "hill",
+          "count": 2,
+          "density": 1.786,
+          "example": "hill"
+        },
+        {
+          "key": "junctions",
+          "count": 2,
+          "density": 1.786,
+          "example": "junctions, Junctions"
+        },
+        {
+          "key": "distance",
+          "count": 2,
+          "density": 1.786,
+          "example": "distance, Distance"
+        },
+        {
+          "key": "gravel",
+          "count": 2,
+          "density": 1.786,
+          "example": "gravel"
+        },
+        {
+          "key": "paving",
+          "count": 2,
+          "density": 1.786,
+          "example": "paving, Paving"
+        },
+        {
+          "key": "stones",
+          "count": 2,
+          "density": 1.786,
+          "example": "stones"
+        },
+        {
+          "key": "turns",
+          "count": 2,
+          "density": 1.786,
+          "example": "turns"
+        },
+        {
+          "key": "two",
+          "count": 2,
+          "density": 1.786,
+          "example": "two"
+        },
+        {
+          "key": "more",
+          "count": 2,
+          "density": 1.786,
+          "example": "more"
+        },
+        {
+          "key": "than",
+          "count": 2,
+          "density": 1.786,
+          "example": "than"
+        },
+        {
+          "key": "wet",
+          "count": 2,
+          "density": 1.786,
+          "example": "wet"
+        },
+        {
+          "key": "daily",
+          "count": 1,
+          "density": 0.893,
+          "example": "daily"
+        },
+        {
+          "key": "bicycle",
+          "count": 1,
+          "density": 0.893,
+          "example": "bicycle"
+        },
+        {
+          "key": "small",
+          "count": 1,
+          "density": 0.893,
+          "example": "small"
+        },
+        {
+          "key": "engineering",
+          "count": 1,
+          "density": 0.893,
+          "example": "engineering"
+        },
+        {
+          "key": "problem",
+          "count": 1,
+          "density": 0.893,
+          "example": "problem"
+        },
+        {
+          "key": "shortest",
+          "count": 1,
+          "density": 0.893,
+          "example": "shortest"
+        },
+        {
+          "key": "map",
+          "count": 1,
+          "density": 0.893,
+          "example": "map"
+        },
+        {
+          "key": "rarely",
+          "count": 1,
+          "density": 0.893,
+          "example": "rarely"
+        },
+        {
+          "key": "fastest",
+          "count": 1,
+          "density": 0.893,
+          "example": "fastest"
+        },
+        {
+          "key": "weighs",
+          "count": 1,
+          "density": 0.893,
+          "example": "weighs"
+        },
+        {
+          "key": "quality",
+          "count": 1,
+          "density": 0.893,
+          "example": "quality"
+        },
+        {
+          "key": "number",
+          "count": 1,
+          "density": 0.893,
+          "example": "number"
+        },
+        {
+          "key": "stops",
+          "count": 1,
+          "density": 0.893,
+          "example": "stops"
+        },
+        {
+          "key": "slope",
+          "count": 1,
+          "density": 0.893,
+          "example": "slope"
+        },
+        {
+          "key": "chance",
+          "count": 1,
+          "density": 0.893,
+          "example": "chance"
+        },
+        {
+          "key": "flat",
+          "count": 1,
+          "density": 0.893,
+          "example": "flat"
+        },
+        {
+          "key": "tyre",
+          "count": 1,
+          "density": 0.893,
+          "example": "tyre"
+        },
+        {
+          "key": "calm",
+          "count": 1,
+          "density": 0.893,
+          "example": "calm"
+        },
+        {
+          "key": "beats",
+          "count": 1,
+          "density": 0.893,
+          "example": "beats"
+        },
+        {
+          "key": "fast",
+          "count": 1,
+          "density": 0.893,
+          "example": "fast"
+        },
+        {
+          "key": "road",
+          "count": 1,
+          "density": 0.893,
+          "example": "road"
+        },
+        {
+          "key": "four",
+          "count": 1,
+          "density": 0.893,
+          "example": "four"
+        },
+        {
+          "key": "start",
+          "count": 1,
+          "density": 0.893,
+          "example": "Start"
+        },
+        {
+          "key": "spend",
+          "count": 1,
+          "density": 0.893,
+          "example": "spend"
+        },
+        {
+          "key": "then",
+          "count": 1,
+          "density": 0.893,
+          "example": "Then"
+        },
+        {
+          "key": "check",
+          "count": 1,
+          "density": 0.893,
+          "example": "check"
+        },
+        {
+          "key": "asphalt",
+          "count": 1,
+          "density": 0.893,
+          "example": "asphalt"
+        },
+        {
+          "key": "slower",
+          "count": 1,
+          "density": 0.893,
+          "example": "slower"
+        },
+        {
+          "key": "shake",
+          "count": 1,
+          "density": 0.893,
+          "example": "shake"
+        },
+        {
+          "key": "frame",
+          "count": 1,
+          "density": 0.893,
+          "example": "frame"
+        },
+        {
+          "key": "next",
+          "count": 1,
+          "density": 0.893,
+          "example": "Next"
+        },
+        {
+          "key": "count",
+          "count": 1,
+          "density": 0.893,
+          "example": "count"
+        },
+        {
+          "key": "lights",
+          "count": 1,
+          "density": 0.893,
+          "example": "lights"
+        },
+        {
+          "key": "across",
+          "count": 1,
+          "density": 0.893,
+          "example": "across"
+        },
+        {
+          "key": "lanes",
+          "count": 1,
+          "density": 0.893,
+          "example": "lanes"
+        },
+        {
+          "key": "each",
+          "count": 1,
+          "density": 0.893,
+          "example": "Each"
+        },
+        {
+          "key": "turn",
+          "count": 1,
+          "density": 0.893,
+          "example": "turn"
+        },
+        {
+          "key": "costs",
+          "count": 1,
+          "density": 0.893,
+          "example": "costs"
+        },
+        {
+          "key": "riding",
+          "count": 1,
+          "density": 0.893,
+          "example": "riding"
+        },
+        {
+          "key": "hills",
+          "count": 1,
+          "density": 0.893,
+          "example": "Hills"
+        },
+        {
+          "key": "way",
+          "count": 1,
+          "density": 0.893,
+          "example": "way"
+        },
+        {
+          "key": "weather",
+          "count": 1,
+          "density": 0.893,
+          "example": "Weather"
+        },
+        {
+          "key": "changes",
+          "count": 1,
+          "density": 0.893,
+          "example": "changes"
+        },
+        {
+          "key": "plan",
+          "count": 1,
+          "density": 0.893,
+          "example": "plan"
+        },
+        {
+          "key": "often",
+          "count": 1,
+          "density": 0.893,
+          "example": "often"
+        },
+        {
+          "key": "needs",
+          "count": 1,
+          "density": 0.893,
+          "example": "needs"
+        },
+        {
+          "key": "dry",
+          "count": 1,
+          "density": 0.893,
+          "example": "dry"
+        },
+        {
+          "key": "uses",
+          "count": 1,
+          "density": 0.893,
+          "example": "uses"
+        },
+        {
+          "key": "wider",
+          "count": 1,
+          "density": 0.893,
+          "example": "wider"
+        },
+        {
+          "key": "streets",
+          "count": 1,
+          "density": 0.893,
+          "example": "streets"
+        },
+        {
+          "key": "avoids",
+          "count": 1,
+          "density": 0.893,
+          "example": "avoids"
+        },
+        {
+          "key": "repair",
+          "count": 1,
+          "density": 0.893,
+          "example": "repair"
+        },
+        {
+          "key": "kit",
+          "count": 1,
+          "density": 0.893,
+          "example": "kit"
+        },
+        {
+          "key": "pump",
+          "count": 1,
+          "density": 0.893,
+          "example": "pump"
+        },
+        {
+          "key": "spare",
+          "count": 1,
+          "density": 0.893,
+          "example": "spare"
+        },
+        {
+          "key": "tube",
+          "count": 1,
+          "density": 0.893,
+          "example": "tube"
+        },
+        {
+          "key": "belong",
+          "count": 1,
+          "density": 0.893,
+          "example": "belong"
+        },
+        {
+          "key": "bag",
+          "count": 1,
+          "density": 0.893,
+          "example": "bag"
+        },
+        {
+          "key": "shelf",
+          "count": 1,
+          "density": 0.893,
+          "example": "shelf"
+        },
+        {
+          "key": "home",
+          "count": 1,
+          "density": 0.893,
+          "example": "home"
+        },
+        {
+          "key": "compare",
+          "count": 1,
+          "density": 0.893,
+          "example": "Compare"
+        },
+        {
+          "key": "routes",
+          "count": 1,
+          "density": 0.893,
+          "example": "routes"
+        },
+        {
+          "key": "page",
+          "count": 1,
+          "density": 0.893,
+          "example": "page"
+        },
+        {
+          "key": "read",
+          "count": 1,
+          "density": 0.893,
+          "example": "read"
+        },
+        {
+          "key": "notes",
+          "count": 1,
+          "density": 0.893,
+          "example": "notes"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "every street",
+          "count": 2,
+          "density": 1.786,
+          "example": "every street"
+        },
+        {
+          "key": "paving stones",
+          "count": 2,
+          "density": 1.786,
+          "example": "paving stones"
+        },
+        {
+          "key": "left turns",
+          "count": 2,
+          "density": 1.786,
+          "example": "left turns"
+        },
+        {
+          "key": "wet route",
+          "count": 2,
+          "density": 1.786,
+          "example": "wet route"
+        },
+        {
+          "key": "daily bicycle",
+          "count": 1,
+          "density": 0.893,
+          "example": "daily bicycle"
+        },
+        {
+          "key": "bicycle route",
+          "count": 1,
+          "density": 0.893,
+          "example": "bicycle route"
+        },
+        {
+          "key": "route is a small",
+          "count": 1,
+          "density": 0.893,
+          "example": "route is a small"
+        },
+        {
+          "key": "small engineering",
+          "count": 1,
+          "density": 0.893,
+          "example": "small engineering"
+        },
+        {
+          "key": "engineering problem",
+          "count": 1,
+          "density": 0.893,
+          "example": "engineering problem"
+        },
+        {
+          "key": "shortest line",
+          "count": 1,
+          "density": 0.893,
+          "example": "shortest line"
+        },
+        {
+          "key": "line on the map",
+          "count": 1,
+          "density": 0.893,
+          "example": "line on the map"
+        },
+        {
+          "key": "map is rarely",
+          "count": 1,
+          "density": 0.893,
+          "example": "map is rarely"
+        },
+        {
+          "key": "rarely the fastest",
+          "count": 1,
+          "density": 0.893,
+          "example": "rarely the fastest"
+        },
+        {
+          "key": "fastest line",
+          "count": 1,
+          "density": 0.893,
+          "example": "fastest line"
+        },
+        {
+          "key": "line in traffic",
+          "count": 1,
+          "density": 0.893,
+          "example": "line in traffic"
+        },
+        {
+          "key": "rider weighs",
+          "count": 1,
+          "density": 0.893,
+          "example": "rider weighs"
+        },
+        {
+          "key": "weighs surface",
+          "count": 1,
+          "density": 0.893,
+          "example": "weighs surface"
+        },
+        {
+          "key": "surface quality",
+          "count": 1,
+          "density": 0.893,
+          "example": "surface quality"
+        },
+        {
+          "key": "number of stops",
+          "count": 1,
+          "density": 0.893,
+          "example": "number of stops"
+        },
+        {
+          "key": "slope of every",
+          "count": 1,
+          "density": 0.893,
+          "example": "slope of every"
+        },
+        {
+          "key": "street and the chance",
+          "count": 1,
+          "density": 0.893,
+          "example": "street and the chance"
+        },
+        {
+          "key": "chance of a flat",
+          "count": 1,
+          "density": 0.893,
+          "example": "chance of a flat"
+        },
+        {
+          "key": "flat tyre",
+          "count": 1,
+          "density": 0.893,
+          "example": "flat tyre"
+        },
+        {
+          "key": "calm street",
+          "count": 1,
+          "density": 0.893,
+          "example": "calm street"
+        },
+        {
+          "key": "street with one hill",
+          "count": 1,
+          "density": 0.893,
+          "example": "street with one hill"
+        },
+        {
+          "key": "hill beats",
+          "count": 1,
+          "density": 0.893,
+          "example": "hill beats"
+        },
+        {
+          "key": "beats a fast",
+          "count": 1,
+          "density": 0.893,
+          "example": "beats a fast"
+        },
+        {
+          "key": "fast road",
+          "count": 1,
+          "density": 0.893,
+          "example": "fast road"
+        },
+        {
+          "key": "road with four",
+          "count": 1,
+          "density": 0.893,
+          "example": "road with four"
+        },
+        {
+          "key": "four junctions",
+          "count": 1,
+          "density": 0.893,
+          "example": "four junctions"
+        },
+        {
+          "key": "start with the distance",
+          "count": 1,
+          "density": 0.893,
+          "example": "start with the distance"
+        },
+        {
+          "key": "distance and the time",
+          "count": 1,
+          "density": 0.893,
+          "example": "distance and the time"
+        },
+        {
+          "key": "time you can spend",
+          "count": 1,
+          "density": 0.893,
+          "example": "time you can spend"
+        },
+        {
+          "key": "then check",
+          "count": 1,
+          "density": 0.893,
+          "example": "then check"
+        },
+        {
+          "key": "check the surface",
+          "count": 1,
+          "density": 0.893,
+          "example": "check the surface"
+        },
+        {
+          "key": "gravel or paving",
+          "count": 1,
+          "density": 0.893,
+          "example": "gravel or paving"
+        },
+        {
+          "key": "stones are slower",
+          "count": 1,
+          "density": 0.893,
+          "example": "stones are slower"
+        },
+        {
+          "key": "slower and they shake",
+          "count": 1,
+          "density": 0.893,
+          "example": "slower and they shake"
+        },
+        {
+          "key": "shake the frame",
+          "count": 1,
+          "density": 0.893,
+          "example": "shake the frame"
+        },
+        {
+          "key": "count the traffic",
+          "count": 1,
+          "density": 0.893,
+          "example": "count the traffic"
+        },
+        {
+          "key": "traffic lights",
+          "count": 1,
+          "density": 0.893,
+          "example": "traffic lights"
+        },
+        {
+          "key": "lights and the left",
+          "count": 1,
+          "density": 0.893,
+          "example": "lights and the left"
+        },
+        {
+          "key": "turns across",
+          "count": 1,
+          "density": 0.893,
+          "example": "turns across"
+        },
+        {
+          "key": "across two",
+          "count": 1,
+          "density": 0.893,
+          "example": "across two"
+        },
+        {
+          "key": "two lanes",
+          "count": 1,
+          "density": 0.893,
+          "example": "two lanes"
+        },
+        {
+          "key": "each left",
+          "count": 1,
+          "density": 0.893,
+          "example": "each left"
+        },
+        {
+          "key": "left turn",
+          "count": 1,
+          "density": 0.893,
+          "example": "left turn"
+        },
+        {
+          "key": "turn costs",
+          "count": 1,
+          "density": 0.893,
+          "example": "turn costs"
+        },
+        {
+          "key": "costs more",
+          "count": 1,
+          "density": 0.893,
+          "example": "costs more"
+        },
+        {
+          "key": "more time",
+          "count": 1,
+          "density": 0.893,
+          "example": "more time"
+        },
+        {
+          "key": "time than",
+          "count": 1,
+          "density": 0.893,
+          "example": "time than"
+        },
+        {
+          "key": "than a hill",
+          "count": 1,
+          "density": 0.893,
+          "example": "than a hill"
+        },
+        {
+          "key": "distance and riding",
+          "count": 1,
+          "density": 0.893,
+          "example": "distance and riding"
+        },
+        {
+          "key": "riding time",
+          "count": 1,
+          "density": 0.893,
+          "example": "riding time"
+        },
+        {
+          "key": "time surface",
+          "count": 1,
+          "density": 0.893,
+          "example": "time surface"
+        },
+        {
+          "key": "surface of every",
+          "count": 1,
+          "density": 0.893,
+          "example": "surface of every"
+        },
+        {
+          "key": "street junctions",
+          "count": 1,
+          "density": 0.893,
+          "example": "street junctions"
+        },
+        {
+          "key": "junctions and left",
+          "count": 1,
+          "density": 0.893,
+          "example": "junctions and left"
+        },
+        {
+          "key": "turns hills",
+          "count": 1,
+          "density": 0.893,
+          "example": "turns hills"
+        },
+        {
+          "key": "hills on the way",
+          "count": 1,
+          "density": 0.893,
+          "example": "hills on the way"
+        },
+        {
+          "key": "way weather",
+          "count": 1,
+          "density": 0.893,
+          "example": "way weather"
+        },
+        {
+          "key": "weather changes",
+          "count": 1,
+          "density": 0.893,
+          "example": "weather changes"
+        },
+        {
+          "key": "changes the plan",
+          "count": 1,
+          "density": 0.893,
+          "example": "changes the plan"
+        },
+        {
+          "key": "plan more",
+          "count": 1,
+          "density": 0.893,
+          "example": "plan more"
+        },
+        {
+          "key": "more often",
+          "count": 1,
+          "density": 0.893,
+          "example": "more often"
+        },
+        {
+          "key": "often than",
+          "count": 1,
+          "density": 0.893,
+          "example": "often than"
+        },
+        {
+          "key": "than traffic",
+          "count": 1,
+          "density": 0.893,
+          "example": "than traffic"
+        },
+        {
+          "key": "rider needs",
+          "count": 1,
+          "density": 0.893,
+          "example": "rider needs"
+        },
+        {
+          "key": "needs one dry",
+          "count": 1,
+          "density": 0.893,
+          "example": "needs one dry"
+        },
+        {
+          "key": "dry route",
+          "count": 1,
+          "density": 0.893,
+          "example": "dry route"
+        },
+        {
+          "key": "route and one wet",
+          "count": 1,
+          "density": 0.893,
+          "example": "route and one wet"
+        },
+        {
+          "key": "route uses",
+          "count": 1,
+          "density": 0.893,
+          "example": "route uses"
+        },
+        {
+          "key": "uses wider",
+          "count": 1,
+          "density": 0.893,
+          "example": "uses wider"
+        },
+        {
+          "key": "wider streets",
+          "count": 1,
+          "density": 0.893,
+          "example": "wider streets"
+        },
+        {
+          "key": "streets and avoids",
+          "count": 1,
+          "density": 0.893,
+          "example": "streets and avoids"
+        },
+        {
+          "key": "avoids gravel",
+          "count": 1,
+          "density": 0.893,
+          "example": "avoids gravel"
+        },
+        {
+          "key": "repair kit",
+          "count": 1,
+          "density": 0.893,
+          "example": "repair kit"
+        },
+        {
+          "key": "pump and a spare",
+          "count": 1,
+          "density": 0.893,
+          "example": "pump and a spare"
+        },
+        {
+          "key": "spare tube",
+          "count": 1,
+          "density": 0.893,
+          "example": "spare tube"
+        },
+        {
+          "key": "tube belong",
+          "count": 1,
+          "density": 0.893,
+          "example": "tube belong"
+        },
+        {
+          "key": "belong to the bag",
+          "count": 1,
+          "density": 0.893,
+          "example": "belong to the bag"
+        },
+        {
+          "key": "shelf at home",
+          "count": 1,
+          "density": 0.893,
+          "example": "shelf at home"
+        },
+        {
+          "key": "compare two",
+          "count": 1,
+          "density": 0.893,
+          "example": "compare two"
+        },
+        {
+          "key": "two routes",
+          "count": 1,
+          "density": 0.893,
+          "example": "two routes"
+        },
+        {
+          "key": "routes with the page",
+          "count": 1,
+          "density": 0.893,
+          "example": "routes with the page"
+        },
+        {
+          "key": "read the notes",
+          "count": 1,
+          "density": 0.893,
+          "example": "read the notes"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "daily bicycle route",
+          "count": 1,
+          "density": 0.893,
+          "example": "daily bicycle route"
+        },
+        {
+          "key": "bicycle route is a small",
+          "count": 1,
+          "density": 0.893,
+          "example": "bicycle route is a small"
+        },
+        {
+          "key": "route is a small engineering",
+          "count": 1,
+          "density": 0.893,
+          "example": "route is a small engineering"
+        },
+        {
+          "key": "small engineering problem",
+          "count": 1,
+          "density": 0.893,
+          "example": "small engineering problem"
+        },
+        {
+          "key": "shortest line on the map",
+          "count": 1,
+          "density": 0.893,
+          "example": "shortest line on the map"
+        },
+        {
+          "key": "line on the map is rarely",
+          "count": 1,
+          "density": 0.893,
+          "example": "line on the map is rarely"
+        },
+        {
+          "key": "map is rarely the fastest",
+          "count": 1,
+          "density": 0.893,
+          "example": "map is rarely the fastest"
+        },
+        {
+          "key": "rarely the fastest line",
+          "count": 1,
+          "density": 0.893,
+          "example": "rarely the fastest line"
+        },
+        {
+          "key": "fastest line in traffic",
+          "count": 1,
+          "density": 0.893,
+          "example": "fastest line in traffic"
+        },
+        {
+          "key": "rider weighs surface",
+          "count": 1,
+          "density": 0.893,
+          "example": "rider weighs surface"
+        },
+        {
+          "key": "weighs surface quality",
+          "count": 1,
+          "density": 0.893,
+          "example": "weighs surface quality"
+        },
+        {
+          "key": "slope of every street",
+          "count": 1,
+          "density": 0.893,
+          "example": "slope of every street"
+        },
+        {
+          "key": "every street and the chance",
+          "count": 1,
+          "density": 0.893,
+          "example": "every street and the chance"
+        },
+        {
+          "key": "street and the chance of a flat",
+          "count": 1,
+          "density": 0.893,
+          "example": "street and the chance of a flat"
+        },
+        {
+          "key": "chance of a flat tyre",
+          "count": 1,
+          "density": 0.893,
+          "example": "chance of a flat tyre"
+        },
+        {
+          "key": "calm street with one hill",
+          "count": 1,
+          "density": 0.893,
+          "example": "calm street with one hill"
+        },
+        {
+          "key": "street with one hill beats",
+          "count": 1,
+          "density": 0.893,
+          "example": "street with one hill beats"
+        },
+        {
+          "key": "hill beats a fast",
+          "count": 1,
+          "density": 0.893,
+          "example": "hill beats a fast"
+        },
+        {
+          "key": "beats a fast road",
+          "count": 1,
+          "density": 0.893,
+          "example": "beats a fast road"
+        },
+        {
+          "key": "fast road with four",
+          "count": 1,
+          "density": 0.893,
+          "example": "fast road with four"
+        },
+        {
+          "key": "road with four junctions",
+          "count": 1,
+          "density": 0.893,
+          "example": "road with four junctions"
+        },
+        {
+          "key": "start with the distance and the time",
+          "count": 1,
+          "density": 0.893,
+          "example": "start with the distance and the time"
+        },
+        {
+          "key": "distance and the time you can spend",
+          "count": 1,
+          "density": 0.893,
+          "example": "distance and the time you can spend"
+        },
+        {
+          "key": "then check the surface",
+          "count": 1,
+          "density": 0.893,
+          "example": "then check the surface"
+        },
+        {
+          "key": "gravel or paving stones",
+          "count": 1,
+          "density": 0.893,
+          "example": "gravel or paving stones"
+        },
+        {
+          "key": "paving stones are slower",
+          "count": 1,
+          "density": 0.893,
+          "example": "paving stones are slower"
+        },
+        {
+          "key": "stones are slower and they shake",
+          "count": 1,
+          "density": 0.893,
+          "example": "stones are slower and they shake"
+        },
+        {
+          "key": "slower and they shake the frame",
+          "count": 1,
+          "density": 0.893,
+          "example": "slower and they shake the frame"
+        },
+        {
+          "key": "count the traffic lights",
+          "count": 1,
+          "density": 0.893,
+          "example": "count the traffic lights"
+        },
+        {
+          "key": "traffic lights and the left",
+          "count": 1,
+          "density": 0.893,
+          "example": "traffic lights and the left"
+        },
+        {
+          "key": "lights and the left turns",
+          "count": 1,
+          "density": 0.893,
+          "example": "lights and the left turns"
+        },
+        {
+          "key": "left turns across",
+          "count": 1,
+          "density": 0.893,
+          "example": "left turns across"
+        },
+        {
+          "key": "turns across two",
+          "count": 1,
+          "density": 0.893,
+          "example": "turns across two"
+        },
+        {
+          "key": "across two lanes",
+          "count": 1,
+          "density": 0.893,
+          "example": "across two lanes"
+        },
+        {
+          "key": "each left turn",
+          "count": 1,
+          "density": 0.893,
+          "example": "each left turn"
+        },
+        {
+          "key": "left turn costs",
+          "count": 1,
+          "density": 0.893,
+          "example": "left turn costs"
+        },
+        {
+          "key": "turn costs more",
+          "count": 1,
+          "density": 0.893,
+          "example": "turn costs more"
+        },
+        {
+          "key": "costs more time",
+          "count": 1,
+          "density": 0.893,
+          "example": "costs more time"
+        },
+        {
+          "key": "more time than",
+          "count": 1,
+          "density": 0.893,
+          "example": "more time than"
+        },
+        {
+          "key": "time than a hill",
+          "count": 1,
+          "density": 0.893,
+          "example": "time than a hill"
+        },
+        {
+          "key": "distance and riding time",
+          "count": 1,
+          "density": 0.893,
+          "example": "distance and riding time"
+        },
+        {
+          "key": "riding time surface",
+          "count": 1,
+          "density": 0.893,
+          "example": "riding time surface"
+        },
+        {
+          "key": "time surface of every",
+          "count": 1,
+          "density": 0.893,
+          "example": "time surface of every"
+        },
+        {
+          "key": "surface of every street",
+          "count": 1,
+          "density": 0.893,
+          "example": "surface of every street"
+        },
+        {
+          "key": "every street junctions",
+          "count": 1,
+          "density": 0.893,
+          "example": "every street junctions"
+        },
+        {
+          "key": "street junctions and left",
+          "count": 1,
+          "density": 0.893,
+          "example": "street junctions and left"
+        },
+        {
+          "key": "junctions and left turns",
+          "count": 1,
+          "density": 0.893,
+          "example": "junctions and left turns"
+        },
+        {
+          "key": "left turns hills",
+          "count": 1,
+          "density": 0.893,
+          "example": "left turns hills"
+        },
+        {
+          "key": "turns hills on the way",
+          "count": 1,
+          "density": 0.893,
+          "example": "turns hills on the way"
+        },
+        {
+          "key": "hills on the way weather",
+          "count": 1,
+          "density": 0.893,
+          "example": "hills on the way weather"
+        },
+        {
+          "key": "way weather changes",
+          "count": 1,
+          "density": 0.893,
+          "example": "way weather changes"
+        },
+        {
+          "key": "weather changes the plan",
+          "count": 1,
+          "density": 0.893,
+          "example": "weather changes the plan"
+        },
+        {
+          "key": "changes the plan more",
+          "count": 1,
+          "density": 0.893,
+          "example": "changes the plan more"
+        },
+        {
+          "key": "plan more often",
+          "count": 1,
+          "density": 0.893,
+          "example": "plan more often"
+        },
+        {
+          "key": "more often than",
+          "count": 1,
+          "density": 0.893,
+          "example": "more often than"
+        },
+        {
+          "key": "often than traffic",
+          "count": 1,
+          "density": 0.893,
+          "example": "often than traffic"
+        },
+        {
+          "key": "rider needs one dry",
+          "count": 1,
+          "density": 0.893,
+          "example": "rider needs one dry"
+        },
+        {
+          "key": "needs one dry route",
+          "count": 1,
+          "density": 0.893,
+          "example": "needs one dry route"
+        },
+        {
+          "key": "dry route and one wet",
+          "count": 1,
+          "density": 0.893,
+          "example": "dry route and one wet"
+        },
+        {
+          "key": "route and one wet route",
+          "count": 1,
+          "density": 0.893,
+          "example": "route and one wet route"
+        },
+        {
+          "key": "wet route uses",
+          "count": 1,
+          "density": 0.893,
+          "example": "wet route uses"
+        },
+        {
+          "key": "route uses wider",
+          "count": 1,
+          "density": 0.893,
+          "example": "route uses wider"
+        },
+        {
+          "key": "uses wider streets",
+          "count": 1,
+          "density": 0.893,
+          "example": "uses wider streets"
+        },
+        {
+          "key": "wider streets and avoids",
+          "count": 1,
+          "density": 0.893,
+          "example": "wider streets and avoids"
+        },
+        {
+          "key": "streets and avoids gravel",
+          "count": 1,
+          "density": 0.893,
+          "example": "streets and avoids gravel"
+        },
+        {
+          "key": "pump and a spare tube",
+          "count": 1,
+          "density": 0.893,
+          "example": "pump and a spare tube"
+        },
+        {
+          "key": "spare tube belong",
+          "count": 1,
+          "density": 0.893,
+          "example": "spare tube belong"
+        },
+        {
+          "key": "tube belong to the bag",
+          "count": 1,
+          "density": 0.893,
+          "example": "tube belong to the bag"
+        },
+        {
+          "key": "compare two routes",
+          "count": 1,
+          "density": 0.893,
+          "example": "compare two routes"
+        },
+        {
+          "key": "two routes with the page",
+          "count": 1,
+          "density": 0.893,
+          "example": "two routes with the page"
+        }
+      ]
+    },
+    "headings": {
+      "length": 34,
+      "length_trim": 28,
+      "sentences": 1,
+      "words_total": 7,
+      "words_count": 4,
+      "words_root_count": 4,
+      "water_percent": 42.86,
+      "nausea_classic": 1.0,
+      "nausea_academic": 14.29,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 4,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "measure",
+          "count": 1,
+          "density": 25.0,
+          "example": "measure"
+        },
+        {
+          "key": "first",
+          "count": 1,
+          "density": 25.0,
+          "example": "first"
+        },
+        {
+          "key": "spare",
+          "count": 1,
+          "density": 25.0,
+          "example": "spare"
+        },
+        {
+          "key": "plan",
+          "count": 1,
+          "density": 25.0,
+          "example": "plan"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "measure first",
+          "count": 1,
+          "density": 25.0,
+          "example": "measure first"
+        },
+        {
+          "key": "first a spare",
+          "count": 1,
+          "density": 25.0,
+          "example": "first a spare"
+        },
+        {
+          "key": "spare plan",
+          "count": 1,
+          "density": 25.0,
+          "example": "spare plan"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "measure first a spare",
+          "count": 1,
+          "density": 25.0,
+          "example": "measure first a spare"
+        },
+        {
+          "key": "first a spare plan",
+          "count": 1,
+          "density": 25.0,
+          "example": "first a spare plan"
+        }
+      ]
+    },
+    "links": {
+      "length": 28,
+      "length_trim": 25,
+      "sentences": 1,
+      "words_total": 4,
+      "words_count": 4,
+      "words_root_count": 4,
+      "water_percent": 0.0,
+      "nausea_classic": 1.0,
+      "nausea_academic": 25.0,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 4,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "route",
+          "count": 1,
+          "density": 25.0,
+          "example": "route"
+        },
+        {
+          "key": "comparison",
+          "count": 1,
+          "density": 25.0,
+          "example": "comparison"
+        },
+        {
+          "key": "tyre",
+          "count": 1,
+          "density": 25.0,
+          "example": "tyre"
+        },
+        {
+          "key": "choice",
+          "count": 1,
+          "density": 25.0,
+          "example": "choice"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "route comparison",
+          "count": 1,
+          "density": 25.0,
+          "example": "route comparison"
+        },
+        {
+          "key": "comparison tyre",
+          "count": 1,
+          "density": 25.0,
+          "example": "comparison tyre"
+        },
+        {
+          "key": "tyre choice",
+          "count": 1,
+          "density": 25.0,
+          "example": "tyre choice"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "route comparison tyre",
+          "count": 1,
+          "density": 25.0,
+          "example": "route comparison tyre"
+        },
+        {
+          "key": "comparison tyre choice",
+          "count": 1,
+          "density": 25.0,
+          "example": "comparison tyre choice"
+        }
+      ]
+    },
+    "text_links": {
+      "length": 1057,
+      "length_trim": 861,
+      "sentences": 14,
+      "words_total": 196,
+      "words_count": 125,
+      "words_root_count": 91,
+      "water_percent": 36.22,
+      "nausea_classic": 2.45,
+      "nausea_academic": 3.06,
+      "zipf_quality": 83.2,
+      "ttr": 0.728,
+      "mtld": 118.24,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "в норме",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "route",
+          "count": 6,
+          "density": 4.8,
+          "example": "Route, route"
+        },
+        {
+          "key": "traffic",
+          "count": 3,
+          "density": 2.4,
+          "example": "traffic"
+        },
+        {
+          "key": "surface",
+          "count": 3,
+          "density": 2.4,
+          "example": "surface, Surface"
+        },
+        {
+          "key": "street",
+          "count": 3,
+          "density": 2.4,
+          "example": "street"
+        },
+        {
+          "key": "time",
+          "count": 3,
+          "density": 2.4,
+          "example": "time"
+        },
+        {
+          "key": "left",
+          "count": 3,
+          "density": 2.4,
+          "example": "left"
+        },
+        {
+          "key": "bicycle",
+          "count": 2,
+          "density": 1.6,
+          "example": "Bicycle, bicycle"
+        },
+        {
+          "key": "across",
+          "count": 2,
+          "density": 1.6,
+          "example": "Across, across"
+        },
+        {
+          "key": "line",
+          "count": 2,
+          "density": 1.6,
+          "example": "line"
+        },
+        {
+          "key": "rider",
+          "count": 2,
+          "density": 1.6,
+          "example": "rider"
+        },
+        {
+          "key": "every",
+          "count": 2,
+          "density": 1.6,
+          "example": "every"
+        },
+        {
+          "key": "tyre",
+          "count": 2,
+          "density": 1.6,
+          "example": "tyre"
+        },
+        {
+          "key": "hill",
+          "count": 2,
+          "density": 1.6,
+          "example": "hill"
+        },
+        {
+          "key": "junctions",
+          "count": 2,
+          "density": 1.6,
+          "example": "junctions, Junctions"
+        },
+        {
+          "key": "distance",
+          "count": 2,
+          "density": 1.6,
+          "example": "distance, Distance"
+        },
+        {
+          "key": "gravel",
+          "count": 2,
+          "density": 1.6,
+          "example": "gravel"
+        },
+        {
+          "key": "paving",
+          "count": 2,
+          "density": 1.6,
+          "example": "paving, Paving"
+        },
+        {
+          "key": "stones",
+          "count": 2,
+          "density": 1.6,
+          "example": "stones"
+        },
+        {
+          "key": "turns",
+          "count": 2,
+          "density": 1.6,
+          "example": "turns"
+        },
+        {
+          "key": "two",
+          "count": 2,
+          "density": 1.6,
+          "example": "two"
+        },
+        {
+          "key": "more",
+          "count": 2,
+          "density": 1.6,
+          "example": "more"
+        },
+        {
+          "key": "than",
+          "count": 2,
+          "density": 1.6,
+          "example": "than"
+        },
+        {
+          "key": "spare",
+          "count": 2,
+          "density": 1.6,
+          "example": "spare"
+        },
+        {
+          "key": "plan",
+          "count": 2,
+          "density": 1.6,
+          "example": "plan"
+        },
+        {
+          "key": "wet",
+          "count": 2,
+          "density": 1.6,
+          "example": "wet"
+        },
+        {
+          "key": "planning",
+          "count": 1,
+          "density": 0.8,
+          "example": "Planning"
+        },
+        {
+          "key": "city",
+          "count": 1,
+          "density": 0.8,
+          "example": "City"
+        },
+        {
+          "key": "daily",
+          "count": 1,
+          "density": 0.8,
+          "example": "daily"
+        },
+        {
+          "key": "small",
+          "count": 1,
+          "density": 0.8,
+          "example": "small"
+        },
+        {
+          "key": "engineering",
+          "count": 1,
+          "density": 0.8,
+          "example": "engineering"
+        },
+        {
+          "key": "problem",
+          "count": 1,
+          "density": 0.8,
+          "example": "problem"
+        },
+        {
+          "key": "shortest",
+          "count": 1,
+          "density": 0.8,
+          "example": "shortest"
+        },
+        {
+          "key": "map",
+          "count": 1,
+          "density": 0.8,
+          "example": "map"
+        },
+        {
+          "key": "rarely",
+          "count": 1,
+          "density": 0.8,
+          "example": "rarely"
+        },
+        {
+          "key": "fastest",
+          "count": 1,
+          "density": 0.8,
+          "example": "fastest"
+        },
+        {
+          "key": "weighs",
+          "count": 1,
+          "density": 0.8,
+          "example": "weighs"
+        },
+        {
+          "key": "quality",
+          "count": 1,
+          "density": 0.8,
+          "example": "quality"
+        },
+        {
+          "key": "number",
+          "count": 1,
+          "density": 0.8,
+          "example": "number"
+        },
+        {
+          "key": "stops",
+          "count": 1,
+          "density": 0.8,
+          "example": "stops"
+        },
+        {
+          "key": "slope",
+          "count": 1,
+          "density": 0.8,
+          "example": "slope"
+        },
+        {
+          "key": "chance",
+          "count": 1,
+          "density": 0.8,
+          "example": "chance"
+        },
+        {
+          "key": "flat",
+          "count": 1,
+          "density": 0.8,
+          "example": "flat"
+        },
+        {
+          "key": "calm",
+          "count": 1,
+          "density": 0.8,
+          "example": "calm"
+        },
+        {
+          "key": "beats",
+          "count": 1,
+          "density": 0.8,
+          "example": "beats"
+        },
+        {
+          "key": "fast",
+          "count": 1,
+          "density": 0.8,
+          "example": "fast"
+        },
+        {
+          "key": "road",
+          "count": 1,
+          "density": 0.8,
+          "example": "road"
+        },
+        {
+          "key": "four",
+          "count": 1,
+          "density": 0.8,
+          "example": "four"
+        },
+        {
+          "key": "measure",
+          "count": 1,
+          "density": 0.8,
+          "example": "measure"
+        },
+        {
+          "key": "first",
+          "count": 1,
+          "density": 0.8,
+          "example": "first"
+        },
+        {
+          "key": "start",
+          "count": 1,
+          "density": 0.8,
+          "example": "Start"
+        },
+        {
+          "key": "spend",
+          "count": 1,
+          "density": 0.8,
+          "example": "spend"
+        },
+        {
+          "key": "then",
+          "count": 1,
+          "density": 0.8,
+          "example": "Then"
+        },
+        {
+          "key": "check",
+          "count": 1,
+          "density": 0.8,
+          "example": "check"
+        },
+        {
+          "key": "asphalt",
+          "count": 1,
+          "density": 0.8,
+          "example": "asphalt"
+        },
+        {
+          "key": "slower",
+          "count": 1,
+          "density": 0.8,
+          "example": "slower"
+        },
+        {
+          "key": "shake",
+          "count": 1,
+          "density": 0.8,
+          "example": "shake"
+        },
+        {
+          "key": "frame",
+          "count": 1,
+          "density": 0.8,
+          "example": "frame"
+        },
+        {
+          "key": "next",
+          "count": 1,
+          "density": 0.8,
+          "example": "Next"
+        },
+        {
+          "key": "count",
+          "count": 1,
+          "density": 0.8,
+          "example": "count"
+        },
+        {
+          "key": "lights",
+          "count": 1,
+          "density": 0.8,
+          "example": "lights"
+        },
+        {
+          "key": "lanes",
+          "count": 1,
+          "density": 0.8,
+          "example": "lanes"
+        },
+        {
+          "key": "each",
+          "count": 1,
+          "density": 0.8,
+          "example": "Each"
+        },
+        {
+          "key": "turn",
+          "count": 1,
+          "density": 0.8,
+          "example": "turn"
+        },
+        {
+          "key": "costs",
+          "count": 1,
+          "density": 0.8,
+          "example": "costs"
+        },
+        {
+          "key": "riding",
+          "count": 1,
+          "density": 0.8,
+          "example": "riding"
+        },
+        {
+          "key": "hills",
+          "count": 1,
+          "density": 0.8,
+          "example": "Hills"
+        },
+        {
+          "key": "way",
+          "count": 1,
+          "density": 0.8,
+          "example": "way"
+        },
+        {
+          "key": "weather",
+          "count": 1,
+          "density": 0.8,
+          "example": "Weather"
+        },
+        {
+          "key": "changes",
+          "count": 1,
+          "density": 0.8,
+          "example": "changes"
+        },
+        {
+          "key": "often",
+          "count": 1,
+          "density": 0.8,
+          "example": "often"
+        },
+        {
+          "key": "needs",
+          "count": 1,
+          "density": 0.8,
+          "example": "needs"
+        },
+        {
+          "key": "dry",
+          "count": 1,
+          "density": 0.8,
+          "example": "dry"
+        },
+        {
+          "key": "uses",
+          "count": 1,
+          "density": 0.8,
+          "example": "uses"
+        },
+        {
+          "key": "wider",
+          "count": 1,
+          "density": 0.8,
+          "example": "wider"
+        },
+        {
+          "key": "streets",
+          "count": 1,
+          "density": 0.8,
+          "example": "streets"
+        },
+        {
+          "key": "avoids",
+          "count": 1,
+          "density": 0.8,
+          "example": "avoids"
+        },
+        {
+          "key": "repair",
+          "count": 1,
+          "density": 0.8,
+          "example": "repair"
+        },
+        {
+          "key": "kit",
+          "count": 1,
+          "density": 0.8,
+          "example": "kit"
+        },
+        {
+          "key": "pump",
+          "count": 1,
+          "density": 0.8,
+          "example": "pump"
+        },
+        {
+          "key": "tube",
+          "count": 1,
+          "density": 0.8,
+          "example": "tube"
+        },
+        {
+          "key": "belong",
+          "count": 1,
+          "density": 0.8,
+          "example": "belong"
+        },
+        {
+          "key": "bag",
+          "count": 1,
+          "density": 0.8,
+          "example": "bag"
+        },
+        {
+          "key": "shelf",
+          "count": 1,
+          "density": 0.8,
+          "example": "shelf"
+        },
+        {
+          "key": "home",
+          "count": 1,
+          "density": 0.8,
+          "example": "home"
+        },
+        {
+          "key": "compare",
+          "count": 1,
+          "density": 0.8,
+          "example": "Compare"
+        },
+        {
+          "key": "routes",
+          "count": 1,
+          "density": 0.8,
+          "example": "routes"
+        },
+        {
+          "key": "comparison",
+          "count": 1,
+          "density": 0.8,
+          "example": "comparison"
+        },
+        {
+          "key": "page",
+          "count": 1,
+          "density": 0.8,
+          "example": "page"
+        },
+        {
+          "key": "read",
+          "count": 1,
+          "density": 0.8,
+          "example": "read"
+        },
+        {
+          "key": "notes",
+          "count": 1,
+          "density": 0.8,
+          "example": "notes"
+        },
+        {
+          "key": "choice",
+          "count": 1,
+          "density": 0.8,
+          "example": "choice"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "bicycle route",
+          "count": 2,
+          "density": 1.6,
+          "example": "bicycle route"
+        },
+        {
+          "key": "every street",
+          "count": 2,
+          "density": 1.6,
+          "example": "every street"
+        },
+        {
+          "key": "paving stones",
+          "count": 2,
+          "density": 1.6,
+          "example": "paving stones"
+        },
+        {
+          "key": "left turns",
+          "count": 2,
+          "density": 1.6,
+          "example": "left turns"
+        },
+        {
+          "key": "wet route",
+          "count": 2,
+          "density": 1.6,
+          "example": "wet route"
+        },
+        {
+          "key": "planning a bicycle",
+          "count": 1,
+          "density": 0.8,
+          "example": "planning a bicycle"
+        },
+        {
+          "key": "route across",
+          "count": 1,
+          "density": 0.8,
+          "example": "route across"
+        },
+        {
+          "key": "across the city",
+          "count": 1,
+          "density": 0.8,
+          "example": "across the city"
+        },
+        {
+          "key": "city a daily",
+          "count": 1,
+          "density": 0.8,
+          "example": "city a daily"
+        },
+        {
+          "key": "daily bicycle",
+          "count": 1,
+          "density": 0.8,
+          "example": "daily bicycle"
+        },
+        {
+          "key": "route is a small",
+          "count": 1,
+          "density": 0.8,
+          "example": "route is a small"
+        },
+        {
+          "key": "small engineering",
+          "count": 1,
+          "density": 0.8,
+          "example": "small engineering"
+        },
+        {
+          "key": "engineering problem",
+          "count": 1,
+          "density": 0.8,
+          "example": "engineering problem"
+        },
+        {
+          "key": "shortest line",
+          "count": 1,
+          "density": 0.8,
+          "example": "shortest line"
+        },
+        {
+          "key": "line on the map",
+          "count": 1,
+          "density": 0.8,
+          "example": "line on the map"
+        },
+        {
+          "key": "map is rarely",
+          "count": 1,
+          "density": 0.8,
+          "example": "map is rarely"
+        },
+        {
+          "key": "rarely the fastest",
+          "count": 1,
+          "density": 0.8,
+          "example": "rarely the fastest"
+        },
+        {
+          "key": "fastest line",
+          "count": 1,
+          "density": 0.8,
+          "example": "fastest line"
+        },
+        {
+          "key": "line in traffic",
+          "count": 1,
+          "density": 0.8,
+          "example": "line in traffic"
+        },
+        {
+          "key": "rider weighs",
+          "count": 1,
+          "density": 0.8,
+          "example": "rider weighs"
+        },
+        {
+          "key": "weighs surface",
+          "count": 1,
+          "density": 0.8,
+          "example": "weighs surface"
+        },
+        {
+          "key": "surface quality",
+          "count": 1,
+          "density": 0.8,
+          "example": "surface quality"
+        },
+        {
+          "key": "number of stops",
+          "count": 1,
+          "density": 0.8,
+          "example": "number of stops"
+        },
+        {
+          "key": "slope of every",
+          "count": 1,
+          "density": 0.8,
+          "example": "slope of every"
+        },
+        {
+          "key": "street and the chance",
+          "count": 1,
+          "density": 0.8,
+          "example": "street and the chance"
+        },
+        {
+          "key": "chance of a flat",
+          "count": 1,
+          "density": 0.8,
+          "example": "chance of a flat"
+        },
+        {
+          "key": "flat tyre",
+          "count": 1,
+          "density": 0.8,
+          "example": "flat tyre"
+        },
+        {
+          "key": "calm street",
+          "count": 1,
+          "density": 0.8,
+          "example": "calm street"
+        },
+        {
+          "key": "street with one hill",
+          "count": 1,
+          "density": 0.8,
+          "example": "street with one hill"
+        },
+        {
+          "key": "hill beats",
+          "count": 1,
+          "density": 0.8,
+          "example": "hill beats"
+        },
+        {
+          "key": "beats a fast",
+          "count": 1,
+          "density": 0.8,
+          "example": "beats a fast"
+        },
+        {
+          "key": "fast road",
+          "count": 1,
+          "density": 0.8,
+          "example": "fast road"
+        },
+        {
+          "key": "road with four",
+          "count": 1,
+          "density": 0.8,
+          "example": "road with four"
+        },
+        {
+          "key": "four junctions",
+          "count": 1,
+          "density": 0.8,
+          "example": "four junctions"
+        },
+        {
+          "key": "measure first",
+          "count": 1,
+          "density": 0.8,
+          "example": "measure first"
+        },
+        {
+          "key": "first start",
+          "count": 1,
+          "density": 0.8,
+          "example": "first start"
+        },
+        {
+          "key": "start with the distance",
+          "count": 1,
+          "density": 0.8,
+          "example": "start with the distance"
+        },
+        {
+          "key": "distance and the time",
+          "count": 1,
+          "density": 0.8,
+          "example": "distance and the time"
+        },
+        {
+          "key": "time you can spend",
+          "count": 1,
+          "density": 0.8,
+          "example": "time you can spend"
+        },
+        {
+          "key": "then check",
+          "count": 1,
+          "density": 0.8,
+          "example": "then check"
+        },
+        {
+          "key": "check the surface",
+          "count": 1,
+          "density": 0.8,
+          "example": "check the surface"
+        },
+        {
+          "key": "gravel or paving",
+          "count": 1,
+          "density": 0.8,
+          "example": "gravel or paving"
+        },
+        {
+          "key": "stones are slower",
+          "count": 1,
+          "density": 0.8,
+          "example": "stones are slower"
+        },
+        {
+          "key": "slower and they shake",
+          "count": 1,
+          "density": 0.8,
+          "example": "slower and they shake"
+        },
+        {
+          "key": "shake the frame",
+          "count": 1,
+          "density": 0.8,
+          "example": "shake the frame"
+        },
+        {
+          "key": "count the traffic",
+          "count": 1,
+          "density": 0.8,
+          "example": "count the traffic"
+        },
+        {
+          "key": "traffic lights",
+          "count": 1,
+          "density": 0.8,
+          "example": "traffic lights"
+        },
+        {
+          "key": "lights and the left",
+          "count": 1,
+          "density": 0.8,
+          "example": "lights and the left"
+        },
+        {
+          "key": "turns across",
+          "count": 1,
+          "density": 0.8,
+          "example": "turns across"
+        },
+        {
+          "key": "across two",
+          "count": 1,
+          "density": 0.8,
+          "example": "across two"
+        },
+        {
+          "key": "two lanes",
+          "count": 1,
+          "density": 0.8,
+          "example": "two lanes"
+        },
+        {
+          "key": "each left",
+          "count": 1,
+          "density": 0.8,
+          "example": "each left"
+        },
+        {
+          "key": "left turn",
+          "count": 1,
+          "density": 0.8,
+          "example": "left turn"
+        },
+        {
+          "key": "turn costs",
+          "count": 1,
+          "density": 0.8,
+          "example": "turn costs"
+        },
+        {
+          "key": "costs more",
+          "count": 1,
+          "density": 0.8,
+          "example": "costs more"
+        },
+        {
+          "key": "more time",
+          "count": 1,
+          "density": 0.8,
+          "example": "more time"
+        },
+        {
+          "key": "time than",
+          "count": 1,
+          "density": 0.8,
+          "example": "time than"
+        },
+        {
+          "key": "than a hill",
+          "count": 1,
+          "density": 0.8,
+          "example": "than a hill"
+        },
+        {
+          "key": "distance and riding",
+          "count": 1,
+          "density": 0.8,
+          "example": "distance and riding"
+        },
+        {
+          "key": "riding time",
+          "count": 1,
+          "density": 0.8,
+          "example": "riding time"
+        },
+        {
+          "key": "time surface",
+          "count": 1,
+          "density": 0.8,
+          "example": "time surface"
+        },
+        {
+          "key": "surface of every",
+          "count": 1,
+          "density": 0.8,
+          "example": "surface of every"
+        },
+        {
+          "key": "street junctions",
+          "count": 1,
+          "density": 0.8,
+          "example": "street junctions"
+        },
+        {
+          "key": "junctions and left",
+          "count": 1,
+          "density": 0.8,
+          "example": "junctions and left"
+        },
+        {
+          "key": "turns hills",
+          "count": 1,
+          "density": 0.8,
+          "example": "turns hills"
+        },
+        {
+          "key": "hills on the way",
+          "count": 1,
+          "density": 0.8,
+          "example": "hills on the way"
+        },
+        {
+          "key": "way a spare",
+          "count": 1,
+          "density": 0.8,
+          "example": "way a spare"
+        },
+        {
+          "key": "spare plan",
+          "count": 1,
+          "density": 0.8,
+          "example": "spare plan"
+        },
+        {
+          "key": "plan weather",
+          "count": 1,
+          "density": 0.8,
+          "example": "plan weather"
+        },
+        {
+          "key": "weather changes",
+          "count": 1,
+          "density": 0.8,
+          "example": "weather changes"
+        },
+        {
+          "key": "changes the plan",
+          "count": 1,
+          "density": 0.8,
+          "example": "changes the plan"
+        },
+        {
+          "key": "plan more",
+          "count": 1,
+          "density": 0.8,
+          "example": "plan more"
+        },
+        {
+          "key": "more often",
+          "count": 1,
+          "density": 0.8,
+          "example": "more often"
+        },
+        {
+          "key": "often than",
+          "count": 1,
+          "density": 0.8,
+          "example": "often than"
+        },
+        {
+          "key": "than traffic",
+          "count": 1,
+          "density": 0.8,
+          "example": "than traffic"
+        },
+        {
+          "key": "rider needs",
+          "count": 1,
+          "density": 0.8,
+          "example": "rider needs"
+        },
+        {
+          "key": "needs one dry",
+          "count": 1,
+          "density": 0.8,
+          "example": "needs one dry"
+        },
+        {
+          "key": "dry route",
+          "count": 1,
+          "density": 0.8,
+          "example": "dry route"
+        },
+        {
+          "key": "route and one wet",
+          "count": 1,
+          "density": 0.8,
+          "example": "route and one wet"
+        },
+        {
+          "key": "route uses",
+          "count": 1,
+          "density": 0.8,
+          "example": "route uses"
+        },
+        {
+          "key": "uses wider",
+          "count": 1,
+          "density": 0.8,
+          "example": "uses wider"
+        },
+        {
+          "key": "wider streets",
+          "count": 1,
+          "density": 0.8,
+          "example": "wider streets"
+        },
+        {
+          "key": "streets and avoids",
+          "count": 1,
+          "density": 0.8,
+          "example": "streets and avoids"
+        },
+        {
+          "key": "avoids gravel",
+          "count": 1,
+          "density": 0.8,
+          "example": "avoids gravel"
+        },
+        {
+          "key": "repair kit",
+          "count": 1,
+          "density": 0.8,
+          "example": "repair kit"
+        },
+        {
+          "key": "pump and a spare",
+          "count": 1,
+          "density": 0.8,
+          "example": "pump and a spare"
+        },
+        {
+          "key": "spare tube",
+          "count": 1,
+          "density": 0.8,
+          "example": "spare tube"
+        },
+        {
+          "key": "tube belong",
+          "count": 1,
+          "density": 0.8,
+          "example": "tube belong"
+        },
+        {
+          "key": "belong to the bag",
+          "count": 1,
+          "density": 0.8,
+          "example": "belong to the bag"
+        },
+        {
+          "key": "shelf at home",
+          "count": 1,
+          "density": 0.8,
+          "example": "shelf at home"
+        },
+        {
+          "key": "compare two",
+          "count": 1,
+          "density": 0.8,
+          "example": "compare two"
+        },
+        {
+          "key": "two routes",
+          "count": 1,
+          "density": 0.8,
+          "example": "two routes"
+        },
+        {
+          "key": "routes with the route",
+          "count": 1,
+          "density": 0.8,
+          "example": "routes with the route"
+        },
+        {
+          "key": "route comparison",
+          "count": 1,
+          "density": 0.8,
+          "example": "route comparison"
+        },
+        {
+          "key": "comparison page",
+          "count": 1,
+          "density": 0.8,
+          "example": "comparison page"
+        },
+        {
+          "key": "read the notes",
+          "count": 1,
+          "density": 0.8,
+          "example": "read the notes"
+        },
+        {
+          "key": "notes on tyre",
+          "count": 1,
+          "density": 0.8,
+          "example": "notes on tyre"
+        },
+        {
+          "key": "tyre choice",
+          "count": 1,
+          "density": 0.8,
+          "example": "tyre choice"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "planning a bicycle route",
+          "count": 1,
+          "density": 0.8,
+          "example": "planning a bicycle route"
+        },
+        {
+          "key": "bicycle route across",
+          "count": 1,
+          "density": 0.8,
+          "example": "bicycle route across"
+        },
+        {
+          "key": "route across the city",
+          "count": 1,
+          "density": 0.8,
+          "example": "route across the city"
+        },
+        {
+          "key": "across the city a daily",
+          "count": 1,
+          "density": 0.8,
+          "example": "across the city a daily"
+        },
+        {
+          "key": "city a daily bicycle",
+          "count": 1,
+          "density": 0.8,
+          "example": "city a daily bicycle"
+        },
+        {
+          "key": "daily bicycle route",
+          "count": 1,
+          "density": 0.8,
+          "example": "daily bicycle route"
+        },
+        {
+          "key": "bicycle route is a small",
+          "count": 1,
+          "density": 0.8,
+          "example": "bicycle route is a small"
+        },
+        {
+          "key": "route is a small engineering",
+          "count": 1,
+          "density": 0.8,
+          "example": "route is a small engineering"
+        },
+        {
+          "key": "small engineering problem",
+          "count": 1,
+          "density": 0.8,
+          "example": "small engineering problem"
+        },
+        {
+          "key": "shortest line on the map",
+          "count": 1,
+          "density": 0.8,
+          "example": "shortest line on the map"
+        },
+        {
+          "key": "line on the map is rarely",
+          "count": 1,
+          "density": 0.8,
+          "example": "line on the map is rarely"
+        },
+        {
+          "key": "map is rarely the fastest",
+          "count": 1,
+          "density": 0.8,
+          "example": "map is rarely the fastest"
+        },
+        {
+          "key": "rarely the fastest line",
+          "count": 1,
+          "density": 0.8,
+          "example": "rarely the fastest line"
+        },
+        {
+          "key": "fastest line in traffic",
+          "count": 1,
+          "density": 0.8,
+          "example": "fastest line in traffic"
+        },
+        {
+          "key": "rider weighs surface",
+          "count": 1,
+          "density": 0.8,
+          "example": "rider weighs surface"
+        },
+        {
+          "key": "weighs surface quality",
+          "count": 1,
+          "density": 0.8,
+          "example": "weighs surface quality"
+        },
+        {
+          "key": "slope of every street",
+          "count": 1,
+          "density": 0.8,
+          "example": "slope of every street"
+        },
+        {
+          "key": "every street and the chance",
+          "count": 1,
+          "density": 0.8,
+          "example": "every street and the chance"
+        },
+        {
+          "key": "street and the chance of a flat",
+          "count": 1,
+          "density": 0.8,
+          "example": "street and the chance of a flat"
+        },
+        {
+          "key": "chance of a flat tyre",
+          "count": 1,
+          "density": 0.8,
+          "example": "chance of a flat tyre"
+        },
+        {
+          "key": "calm street with one hill",
+          "count": 1,
+          "density": 0.8,
+          "example": "calm street with one hill"
+        },
+        {
+          "key": "street with one hill beats",
+          "count": 1,
+          "density": 0.8,
+          "example": "street with one hill beats"
+        },
+        {
+          "key": "hill beats a fast",
+          "count": 1,
+          "density": 0.8,
+          "example": "hill beats a fast"
+        },
+        {
+          "key": "beats a fast road",
+          "count": 1,
+          "density": 0.8,
+          "example": "beats a fast road"
+        },
+        {
+          "key": "fast road with four",
+          "count": 1,
+          "density": 0.8,
+          "example": "fast road with four"
+        },
+        {
+          "key": "road with four junctions",
+          "count": 1,
+          "density": 0.8,
+          "example": "road with four junctions"
+        },
+        {
+          "key": "measure first start",
+          "count": 1,
+          "density": 0.8,
+          "example": "measure first start"
+        },
+        {
+          "key": "first start with the distance",
+          "count": 1,
+          "density": 0.8,
+          "example": "first start with the distance"
+        },
+        {
+          "key": "start with the distance and the time",
+          "count": 1,
+          "density": 0.8,
+          "example": "start with the distance and the time"
+        },
+        {
+          "key": "distance and the time you can spend",
+          "count": 1,
+          "density": 0.8,
+          "example": "distance and the time you can spend"
+        },
+        {
+          "key": "then check the surface",
+          "count": 1,
+          "density": 0.8,
+          "example": "then check the surface"
+        },
+        {
+          "key": "gravel or paving stones",
+          "count": 1,
+          "density": 0.8,
+          "example": "gravel or paving stones"
+        },
+        {
+          "key": "paving stones are slower",
+          "count": 1,
+          "density": 0.8,
+          "example": "paving stones are slower"
+        },
+        {
+          "key": "stones are slower and they shake",
+          "count": 1,
+          "density": 0.8,
+          "example": "stones are slower and they shake"
+        },
+        {
+          "key": "slower and they shake the frame",
+          "count": 1,
+          "density": 0.8,
+          "example": "slower and they shake the frame"
+        },
+        {
+          "key": "count the traffic lights",
+          "count": 1,
+          "density": 0.8,
+          "example": "count the traffic lights"
+        },
+        {
+          "key": "traffic lights and the left",
+          "count": 1,
+          "density": 0.8,
+          "example": "traffic lights and the left"
+        },
+        {
+          "key": "lights and the left turns",
+          "count": 1,
+          "density": 0.8,
+          "example": "lights and the left turns"
+        },
+        {
+          "key": "left turns across",
+          "count": 1,
+          "density": 0.8,
+          "example": "left turns across"
+        },
+        {
+          "key": "turns across two",
+          "count": 1,
+          "density": 0.8,
+          "example": "turns across two"
+        },
+        {
+          "key": "across two lanes",
+          "count": 1,
+          "density": 0.8,
+          "example": "across two lanes"
+        },
+        {
+          "key": "each left turn",
+          "count": 1,
+          "density": 0.8,
+          "example": "each left turn"
+        },
+        {
+          "key": "left turn costs",
+          "count": 1,
+          "density": 0.8,
+          "example": "left turn costs"
+        },
+        {
+          "key": "turn costs more",
+          "count": 1,
+          "density": 0.8,
+          "example": "turn costs more"
+        },
+        {
+          "key": "costs more time",
+          "count": 1,
+          "density": 0.8,
+          "example": "costs more time"
+        },
+        {
+          "key": "more time than",
+          "count": 1,
+          "density": 0.8,
+          "example": "more time than"
+        },
+        {
+          "key": "time than a hill",
+          "count": 1,
+          "density": 0.8,
+          "example": "time than a hill"
+        },
+        {
+          "key": "distance and riding time",
+          "count": 1,
+          "density": 0.8,
+          "example": "distance and riding time"
+        },
+        {
+          "key": "riding time surface",
+          "count": 1,
+          "density": 0.8,
+          "example": "riding time surface"
+        },
+        {
+          "key": "time surface of every",
+          "count": 1,
+          "density": 0.8,
+          "example": "time surface of every"
+        },
+        {
+          "key": "surface of every street",
+          "count": 1,
+          "density": 0.8,
+          "example": "surface of every street"
+        },
+        {
+          "key": "every street junctions",
+          "count": 1,
+          "density": 0.8,
+          "example": "every street junctions"
+        },
+        {
+          "key": "street junctions and left",
+          "count": 1,
+          "density": 0.8,
+          "example": "street junctions and left"
+        },
+        {
+          "key": "junctions and left turns",
+          "count": 1,
+          "density": 0.8,
+          "example": "junctions and left turns"
+        },
+        {
+          "key": "left turns hills",
+          "count": 1,
+          "density": 0.8,
+          "example": "left turns hills"
+        },
+        {
+          "key": "turns hills on the way",
+          "count": 1,
+          "density": 0.8,
+          "example": "turns hills on the way"
+        },
+        {
+          "key": "hills on the way a spare",
+          "count": 1,
+          "density": 0.8,
+          "example": "hills on the way a spare"
+        },
+        {
+          "key": "way a spare plan",
+          "count": 1,
+          "density": 0.8,
+          "example": "way a spare plan"
+        },
+        {
+          "key": "spare plan weather",
+          "count": 1,
+          "density": 0.8,
+          "example": "spare plan weather"
+        },
+        {
+          "key": "plan weather changes",
+          "count": 1,
+          "density": 0.8,
+          "example": "plan weather changes"
+        },
+        {
+          "key": "weather changes the plan",
+          "count": 1,
+          "density": 0.8,
+          "example": "weather changes the plan"
+        },
+        {
+          "key": "changes the plan more",
+          "count": 1,
+          "density": 0.8,
+          "example": "changes the plan more"
+        },
+        {
+          "key": "plan more often",
+          "count": 1,
+          "density": 0.8,
+          "example": "plan more often"
+        },
+        {
+          "key": "more often than",
+          "count": 1,
+          "density": 0.8,
+          "example": "more often than"
+        },
+        {
+          "key": "often than traffic",
+          "count": 1,
+          "density": 0.8,
+          "example": "often than traffic"
+        },
+        {
+          "key": "rider needs one dry",
+          "count": 1,
+          "density": 0.8,
+          "example": "rider needs one dry"
+        },
+        {
+          "key": "needs one dry route",
+          "count": 1,
+          "density": 0.8,
+          "example": "needs one dry route"
+        },
+        {
+          "key": "dry route and one wet",
+          "count": 1,
+          "density": 0.8,
+          "example": "dry route and one wet"
+        },
+        {
+          "key": "route and one wet route",
+          "count": 1,
+          "density": 0.8,
+          "example": "route and one wet route"
+        },
+        {
+          "key": "wet route uses",
+          "count": 1,
+          "density": 0.8,
+          "example": "wet route uses"
+        },
+        {
+          "key": "route uses wider",
+          "count": 1,
+          "density": 0.8,
+          "example": "route uses wider"
+        },
+        {
+          "key": "uses wider streets",
+          "count": 1,
+          "density": 0.8,
+          "example": "uses wider streets"
+        },
+        {
+          "key": "wider streets and avoids",
+          "count": 1,
+          "density": 0.8,
+          "example": "wider streets and avoids"
+        },
+        {
+          "key": "streets and avoids gravel",
+          "count": 1,
+          "density": 0.8,
+          "example": "streets and avoids gravel"
+        },
+        {
+          "key": "pump and a spare tube",
+          "count": 1,
+          "density": 0.8,
+          "example": "pump and a spare tube"
+        },
+        {
+          "key": "spare tube belong",
+          "count": 1,
+          "density": 0.8,
+          "example": "spare tube belong"
+        },
+        {
+          "key": "tube belong to the bag",
+          "count": 1,
+          "density": 0.8,
+          "example": "tube belong to the bag"
+        },
+        {
+          "key": "compare two routes",
+          "count": 1,
+          "density": 0.8,
+          "example": "compare two routes"
+        },
+        {
+          "key": "two routes with the route",
+          "count": 1,
+          "density": 0.8,
+          "example": "two routes with the route"
+        },
+        {
+          "key": "routes with the route comparison",
+          "count": 1,
+          "density": 0.8,
+          "example": "routes with the route comparison"
+        },
+        {
+          "key": "route comparison page",
+          "count": 1,
+          "density": 0.8,
+          "example": "route comparison page"
+        },
+        {
+          "key": "read the notes on tyre",
+          "count": 1,
+          "density": 0.8,
+          "example": "read the notes on tyre"
+        },
+        {
+          "key": "notes on tyre choice",
+          "count": 1,
+          "density": 0.8,
+          "example": "notes on tyre choice"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "title": {
+      "length": 40,
+      "length_trim": 34,
+      "sentences": 1,
+      "words_total": 7,
+      "words_count": 5,
+      "words_root_count": 5,
+      "water_percent": 28.57,
+      "nausea_classic": 1.0,
+      "nausea_academic": 14.29,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 5,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "planning",
+          "count": 1,
+          "density": 20.0,
+          "example": "Planning"
+        },
+        {
+          "key": "bicycle",
+          "count": 1,
+          "density": 20.0,
+          "example": "Bicycle"
+        },
+        {
+          "key": "route",
+          "count": 1,
+          "density": 20.0,
+          "example": "Route"
+        },
+        {
+          "key": "across",
+          "count": 1,
+          "density": 20.0,
+          "example": "Across"
+        },
+        {
+          "key": "city",
+          "count": 1,
+          "density": 20.0,
+          "example": "City"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "planning a bicycle",
+          "count": 1,
+          "density": 20.0,
+          "example": "planning a bicycle"
+        },
+        {
+          "key": "bicycle route",
+          "count": 1,
+          "density": 20.0,
+          "example": "bicycle route"
+        },
+        {
+          "key": "route across",
+          "count": 1,
+          "density": 20.0,
+          "example": "route across"
+        },
+        {
+          "key": "across the city",
+          "count": 1,
+          "density": 20.0,
+          "example": "across the city"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "planning a bicycle route",
+          "count": 1,
+          "density": 20.0,
+          "example": "planning a bicycle route"
+        },
+        {
+          "key": "bicycle route across",
+          "count": 1,
+          "density": 20.0,
+          "example": "bicycle route across"
+        },
+        {
+          "key": "route across the city",
+          "count": 1,
+          "density": 20.0,
+          "example": "route across the city"
+        }
+      ]
+    },
+    "h1": {
+      "length": 40,
+      "length_trim": 34,
+      "sentences": 1,
+      "words_total": 7,
+      "words_count": 5,
+      "words_root_count": 5,
+      "water_percent": 28.57,
+      "nausea_classic": 1.0,
+      "nausea_academic": 14.29,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 5,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "planning",
+          "count": 1,
+          "density": 20.0,
+          "example": "Planning"
+        },
+        {
+          "key": "bicycle",
+          "count": 1,
+          "density": 20.0,
+          "example": "Bicycle"
+        },
+        {
+          "key": "route",
+          "count": 1,
+          "density": 20.0,
+          "example": "Route"
+        },
+        {
+          "key": "across",
+          "count": 1,
+          "density": 20.0,
+          "example": "Across"
+        },
+        {
+          "key": "city",
+          "count": 1,
+          "density": 20.0,
+          "example": "City"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "planning a bicycle",
+          "count": 1,
+          "density": 20.0,
+          "example": "planning a bicycle"
+        },
+        {
+          "key": "bicycle route",
+          "count": 1,
+          "density": 20.0,
+          "example": "bicycle route"
+        },
+        {
+          "key": "route across",
+          "count": 1,
+          "density": 20.0,
+          "example": "route across"
+        },
+        {
+          "key": "across the city",
+          "count": 1,
+          "density": 20.0,
+          "example": "across the city"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "planning a bicycle route",
+          "count": 1,
+          "density": 20.0,
+          "example": "planning a bicycle route"
+        },
+        {
+          "key": "bicycle route across",
+          "count": 1,
+          "density": 20.0,
+          "example": "bicycle route across"
+        },
+        {
+          "key": "route across the city",
+          "count": 1,
+          "density": 20.0,
+          "example": "route across the city"
+        }
+      ]
+    },
+    "meta_description": {
+      "length": 94,
+      "length_trim": 78,
+      "sentences": 1,
+      "words_total": 17,
+      "words_count": 12,
+      "words_root_count": 11,
+      "water_percent": 29.41,
+      "nausea_classic": 1.41,
+      "nausea_academic": 11.76,
+      "zipf_quality": 50.2,
+      "ttr": 0.917,
+      "mtld": 40.32,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "повышенная",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "plan",
+          "count": 2,
+          "density": 16.667,
+          "example": "plan"
+        },
+        {
+          "key": "how",
+          "count": 1,
+          "density": 8.333,
+          "example": "How"
+        },
+        {
+          "key": "daily",
+          "count": 1,
+          "density": 8.333,
+          "example": "daily"
+        },
+        {
+          "key": "bicycle",
+          "count": 1,
+          "density": 8.333,
+          "example": "bicycle"
+        },
+        {
+          "key": "route",
+          "count": 1,
+          "density": 8.333,
+          "example": "route"
+        },
+        {
+          "key": "surface",
+          "count": 1,
+          "density": 8.333,
+          "example": "surface"
+        },
+        {
+          "key": "traffic",
+          "count": 1,
+          "density": 8.333,
+          "example": "traffic"
+        },
+        {
+          "key": "hills",
+          "count": 1,
+          "density": 8.333,
+          "example": "hills"
+        },
+        {
+          "key": "parking",
+          "count": 1,
+          "density": 8.333,
+          "example": "parking"
+        },
+        {
+          "key": "spare",
+          "count": 1,
+          "density": 8.333,
+          "example": "spare"
+        },
+        {
+          "key": "rain",
+          "count": 1,
+          "density": 8.333,
+          "example": "rain"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "how to plan",
+          "count": 1,
+          "density": 8.333,
+          "example": "how to plan"
+        },
+        {
+          "key": "plan a daily",
+          "count": 1,
+          "density": 8.333,
+          "example": "plan a daily"
+        },
+        {
+          "key": "daily bicycle",
+          "count": 1,
+          "density": 8.333,
+          "example": "daily bicycle"
+        },
+        {
+          "key": "bicycle route",
+          "count": 1,
+          "density": 8.333,
+          "example": "bicycle route"
+        },
+        {
+          "key": "parking and a spare",
+          "count": 1,
+          "density": 8.333,
+          "example": "parking and a spare"
+        },
+        {
+          "key": "spare plan",
+          "count": 1,
+          "density": 8.333,
+          "example": "spare plan"
+        },
+        {
+          "key": "plan for rain",
+          "count": 1,
+          "density": 8.333,
+          "example": "plan for rain"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "how to plan a daily",
+          "count": 1,
+          "density": 8.333,
+          "example": "how to plan a daily"
+        },
+        {
+          "key": "plan a daily bicycle",
+          "count": 1,
+          "density": 8.333,
+          "example": "plan a daily bicycle"
+        },
+        {
+          "key": "daily bicycle route",
+          "count": 1,
+          "density": 8.333,
+          "example": "daily bicycle route"
+        },
+        {
+          "key": "parking and a spare plan",
+          "count": 1,
+          "density": 8.333,
+          "example": "parking and a spare plan"
+        },
+        {
+          "key": "spare plan for rain",
+          "count": 1,
+          "density": 8.333,
+          "example": "spare plan for rain"
+        }
+      ]
+    }
+  },
+  "structure": {
+    "h1_count": 1,
+    "h2_count": 2,
+    "h3_count": 0,
+    "li_count": 4,
+    "table_count": 0,
+    "heading_tree": [
+      {
+        "level": 1,
+        "text": "Planning a Bicycle Route Across the City",
+        "children": [
+          {
+            "level": 2,
+            "text": "What to measure first",
+            "children": []
+          },
+          {
+            "level": 2,
+            "text": "A spare plan",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "quality": {
+    "accepted": true,
+    "score": 83,
+    "reason": null,
+    "visible_chars": 873,
+    "words": 203,
+    "unique_words": 109,
+    "flags": []
+  }
+}

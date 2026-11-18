@@ -1,0 +1,834 @@
+{
+  "zones": {
+    "text": {
+      "length": 140,
+      "length_trim": 118,
+      "sentences": 3,
+      "words_total": 23,
+      "words_count": 17,
+      "words_root_count": 15,
+      "water_percent": 26.09,
+      "nausea_classic": 1.41,
+      "nausea_academic": 8.7,
+      "zipf_quality": 61.7,
+      "ttr": 0.882,
+      "mtld": 40.46,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "в норме",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "бутыль",
+          "count": 2,
+          "density": 11.765,
+          "example": "Бутыли, Бутыль"
+        },
+        {
+          "key": "аренда",
+          "count": 2,
+          "density": 11.765,
+          "example": "аренду"
+        },
+        {
+          "key": "привезти",
+          "count": 1,
+          "density": 5.882,
+          "example": "Привозим"
+        },
+        {
+          "key": "питьевой",
+          "count": 1,
+          "density": 5.882,
+          "example": "питьевую"
+        },
+        {
+          "key": "вода",
+          "count": 1,
+          "density": 5.882,
+          "example": "воду"
+        },
+        {
+          "key": "офис",
+          "count": 1,
+          "density": 5.882,
+          "example": "офис"
+        },
+        {
+          "key": "день",
+          "count": 1,
+          "density": 5.882,
+          "example": "день"
+        },
+        {
+          "key": "девятнадцать",
+          "count": 1,
+          "density": 5.882,
+          "example": "девятнадцать"
+        },
+        {
+          "key": "литр",
+          "count": 1,
+          "density": 5.882,
+          "example": "литров"
+        },
+        {
+          "key": "сдавать",
+          "count": 1,
+          "density": 5.882,
+          "example": "сдаём"
+        },
+        {
+          "key": "насос",
+          "count": 1,
+          "density": 5.882,
+          "example": "Насос"
+        },
+        {
+          "key": "под",
+          "count": 1,
+          "density": 5.882,
+          "example": "под"
+        },
+        {
+          "key": "залог",
+          "count": 1,
+          "density": 5.882,
+          "example": "залог"
+        },
+        {
+          "key": "доставка",
+          "count": 1,
+          "density": 5.882,
+          "example": "Доставка"
+        },
+        {
+          "key": "бесплатный",
+          "count": 1,
+          "density": 5.882,
+          "example": "бесплатно"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "привезти питьевой",
+          "count": 1,
+          "density": 5.882,
+          "example": "привезти питьевой"
+        },
+        {
+          "key": "питьевой вода",
+          "count": 1,
+          "density": 5.882,
+          "example": "питьевой вода"
+        },
+        {
+          "key": "вода в офис",
+          "count": 1,
+          "density": 5.882,
+          "example": "вода в офис"
+        },
+        {
+          "key": "офис за один день",
+          "count": 1,
+          "density": 5.882,
+          "example": "офис за один день"
+        },
+        {
+          "key": "бутыль на девятнадцать",
+          "count": 1,
+          "density": 5.882,
+          "example": "бутыль на девятнадцать"
+        },
+        {
+          "key": "девятнадцать литр",
+          "count": 1,
+          "density": 5.882,
+          "example": "девятнадцать литр"
+        },
+        {
+          "key": "литр сдавать",
+          "count": 1,
+          "density": 5.882,
+          "example": "литр сдавать"
+        },
+        {
+          "key": "сдавать в аренда",
+          "count": 1,
+          "density": 5.882,
+          "example": "сдавать в аренда"
+        },
+        {
+          "key": "бутыль в аренда",
+          "count": 1,
+          "density": 5.882,
+          "example": "бутыль в аренда"
+        },
+        {
+          "key": "аренда насос",
+          "count": 1,
+          "density": 5.882,
+          "example": "аренда насос"
+        },
+        {
+          "key": "насос под",
+          "count": 1,
+          "density": 5.882,
+          "example": "насос под"
+        },
+        {
+          "key": "под залог",
+          "count": 1,
+          "density": 5.882,
+          "example": "под залог"
+        },
+        {
+          "key": "залог доставка",
+          "count": 1,
+          "density": 5.882,
+          "example": "залог доставка"
+        },
+        {
+          "key": "доставка бесплатный",
+          "count": 1,
+          "density": 5.882,
+          "example": "доставка бесплатный"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "привезти питьевой вода",
+          "count": 1,
+          "density": 5.882,
+          "example": "привезти питьевой вода"
+        },
+        {
+          "key": "питьевой вода в офис",
+          "count": 1,
+          "density": 5.882,
+          "example": "питьевой вода в офис"
+        },
+        {
+          "key": "вода в офис за один день",
+          "count": 1,
+          "density": 5.882,
+          "example": "вода в офис за один день"
+        },
+        {
+          "key": "бутыль на девятнадцать литр",
+          "count": 1,
+          "density": 5.882,
+          "example": "бутыль на девятнадцать литр"
+        },
+        {
+          "key": "девятнадцать литр сдавать",
+          "count": 1,
+          "density": 5.882,
+          "example": "девятнадцать литр сдавать"
+        },
+        {
+          "key": "литр сдавать в аренда",
+          "count": 1,
+          "density": 5.882,
+          "example": "литр сдавать в аренда"
+        },
+        {
+          "key": "бутыль в аренда насос",
+          "count": 1,
+          "density": 5.882,
+          "example": "бутыль в аренда насос"
+        },
+        {
+          "key": "аренда насос под",
+          "count": 1,
+          "density": 5.882,
+          "example": "аренда насос под"
+        },
+        {
+          "key": "насос под залог",
+          "count": 1,
+          "density": 5.882,
+          "example": "насос под залог"
+        },
+        {
+          "key": "под залог доставка",
+          "count": 1,
+          "density": 5.882,
+          "example": "под залог доставка"
+        },
+        {
+          "key": "залог доставка бесплатный",
+          "count": 1,
+          "density": 5.882,
+          "example": "залог доставка бесплатный"
+        }
+      ]
+    },
+    "headings": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    },
+    "links": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    },
+    "text_links": {
+      "length": 161,
+      "length_trim": 135,
+      "sentences": 3,
+      "words_total": 27,
+      "words_count": 20,
+      "words_root_count": 15,
+      "water_percent": 25.93,
+      "nausea_classic": 1.41,
+      "nausea_academic": 7.41,
+      "zipf_quality": 71.4,
+      "ttr": 0.75,
+      "mtld": 16.38,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "в норме",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "доставка",
+          "count": 2,
+          "density": 10.0,
+          "example": "Доставка"
+        },
+        {
+          "key": "вода",
+          "count": 2,
+          "density": 10.0,
+          "example": "воды, воду"
+        },
+        {
+          "key": "офис",
+          "count": 2,
+          "density": 10.0,
+          "example": "офис"
+        },
+        {
+          "key": "бутыль",
+          "count": 2,
+          "density": 10.0,
+          "example": "Бутыли, Бутыль"
+        },
+        {
+          "key": "аренда",
+          "count": 2,
+          "density": 10.0,
+          "example": "аренду"
+        },
+        {
+          "key": "привезти",
+          "count": 1,
+          "density": 5.0,
+          "example": "Привозим"
+        },
+        {
+          "key": "питьевой",
+          "count": 1,
+          "density": 5.0,
+          "example": "питьевую"
+        },
+        {
+          "key": "день",
+          "count": 1,
+          "density": 5.0,
+          "example": "день"
+        },
+        {
+          "key": "девятнадцать",
+          "count": 1,
+          "density": 5.0,
+          "example": "девятнадцать"
+        },
+        {
+          "key": "литр",
+          "count": 1,
+          "density": 5.0,
+          "example": "литров"
+        },
+        {
+          "key": "сдавать",
+          "count": 1,
+          "density": 5.0,
+          "example": "сдаём"
+        },
+        {
+          "key": "насос",
+          "count": 1,
+          "density": 5.0,
+          "example": "Насос"
+        },
+        {
+          "key": "под",
+          "count": 1,
+          "density": 5.0,
+          "example": "под"
+        },
+        {
+          "key": "залог",
+          "count": 1,
+          "density": 5.0,
+          "example": "залог"
+        },
+        {
+          "key": "бесплатный",
+          "count": 1,
+          "density": 5.0,
+          "example": "бесплатно"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "вода в офис",
+          "count": 2,
+          "density": 10.0,
+          "example": "вода в офис"
+        },
+        {
+          "key": "доставка вода",
+          "count": 1,
+          "density": 5.0,
+          "example": "доставка вода"
+        },
+        {
+          "key": "офис привезти",
+          "count": 1,
+          "density": 5.0,
+          "example": "офис привезти"
+        },
+        {
+          "key": "привезти питьевой",
+          "count": 1,
+          "density": 5.0,
+          "example": "привезти питьевой"
+        },
+        {
+          "key": "питьевой вода",
+          "count": 1,
+          "density": 5.0,
+          "example": "питьевой вода"
+        },
+        {
+          "key": "офис за один день",
+          "count": 1,
+          "density": 5.0,
+          "example": "офис за один день"
+        },
+        {
+          "key": "бутыль на девятнадцать",
+          "count": 1,
+          "density": 5.0,
+          "example": "бутыль на девятнадцать"
+        },
+        {
+          "key": "девятнадцать литр",
+          "count": 1,
+          "density": 5.0,
+          "example": "девятнадцать литр"
+        },
+        {
+          "key": "литр сдавать",
+          "count": 1,
+          "density": 5.0,
+          "example": "литр сдавать"
+        },
+        {
+          "key": "сдавать в аренда",
+          "count": 1,
+          "density": 5.0,
+          "example": "сдавать в аренда"
+        },
+        {
+          "key": "бутыль в аренда",
+          "count": 1,
+          "density": 5.0,
+          "example": "бутыль в аренда"
+        },
+        {
+          "key": "аренда насос",
+          "count": 1,
+          "density": 5.0,
+          "example": "аренда насос"
+        },
+        {
+          "key": "насос под",
+          "count": 1,
+          "density": 5.0,
+          "example": "насос под"
+        },
+        {
+          "key": "под залог",
+          "count": 1,
+          "density": 5.0,
+          "example": "под залог"
+        },
+        {
+          "key": "залог доставка",
+          "count": 1,
+          "density": 5.0,
+          "example": "залог доставка"
+        },
+        {
+          "key": "доставка бесплатный",
+          "count": 1,
+          "density": 5.0,
+          "example": "доставка бесплатный"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "доставка вода в офис",
+          "count": 1,
+          "density": 5.0,
+          "example": "доставка вода в офис"
+        },
+        {
+          "key": "вода в офис привезти",
+          "count": 1,
+          "density": 5.0,
+          "example": "вода в офис привезти"
+        },
+        {
+          "key": "офис привезти питьевой",
+          "count": 1,
+          "density": 5.0,
+          "example": "офис привезти питьевой"
+        },
+        {
+          "key": "привезти питьевой вода",
+          "count": 1,
+          "density": 5.0,
+          "example": "привезти питьевой вода"
+        },
+        {
+          "key": "питьевой вода в офис",
+          "count": 1,
+          "density": 5.0,
+          "example": "питьевой вода в офис"
+        },
+        {
+          "key": "вода в офис за один день",
+          "count": 1,
+          "density": 5.0,
+          "example": "вода в офис за один день"
+        },
+        {
+          "key": "бутыль на девятнадцать литр",
+          "count": 1,
+          "density": 5.0,
+          "example": "бутыль на девятнадцать литр"
+        },
+        {
+          "key": "девятнадцать литр сдавать",
+          "count": 1,
+          "density": 5.0,
+          "example": "девятнадцать литр сдавать"
+        },
+        {
+          "key": "литр сдавать в аренда",
+          "count": 1,
+          "density": 5.0,
+          "example": "литр сдавать в аренда"
+        },
+        {
+          "key": "бутыль в аренда насос",
+          "count": 1,
+          "density": 5.0,
+          "example": "бутыль в аренда насос"
+        },
+        {
+          "key": "аренда насос под",
+          "count": 1,
+          "density": 5.0,
+          "example": "аренда насос под"
+        },
+        {
+          "key": "насос под залог",
+          "count": 1,
+          "density": 5.0,
+          "example": "насос под залог"
+        },
+        {
+          "key": "под залог доставка",
+          "count": 1,
+          "density": 5.0,
+          "example": "под залог доставка"
+        },
+        {
+          "key": "залог доставка бесплатный",
+          "count": 1,
+          "density": 5.0,
+          "example": "залог доставка бесплатный"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "title": {
+      "length": 20,
+      "length_trim": 17,
+      "sentences": 1,
+      "words_total": 4,
+      "words_count": 3,
+      "words_root_count": 3,
+      "water_percent": 25.0,
+      "nausea_classic": 1.0,
+      "nausea_academic": 25.0,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 3,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "в норме"
+      },
+      "repeat_words_1": [
+        {
+          "key": "доставка",
+          "count": 1,
+          "density": 33.333,
+          "example": "Доставка"
+        },
+        {
+          "key": "вода",
+          "count": 1,
+          "density": 33.333,
+          "example": "воды"
+        },
+        {
+          "key": "офис",
+          "count": 1,
+          "density": 33.333,
+          "example": "офис"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "доставка вода",
+          "count": 1,
+          "density": 33.333,
+          "example": "доставка вода"
+        },
+        {
+          "key": "вода в офис",
+          "count": 1,
+          "density": 33.333,
+          "example": "вода в офис"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "доставка вода в офис",
+          "count": 1,
+          "density": 33.333,
+          "example": "доставка вода в офис"
+        }
+      ]
+    },
+    "h1": {
+      "length": 20,
+      "length_trim": 17,
+      "sentences": 1,
+      "words_total": 4,
+      "words_count": 3,
+      "words_root_count": 3,
+      "water_percent": 25.0,
+      "nausea_classic": 1.0,
+      "nausea_academic": 25.0,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 3,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "в норме"
+      },
+      "repeat_words_1": [
+        {
+          "key": "доставка",
+          "count": 1,
+          "density": 33.333,
+          "example": "Доставка"
+        },
+        {
+          "key": "вода",
+          "count": 1,
+          "density": 33.333,
+          "example": "воды"
+        },
+        {
+          "key": "офис",
+          "count": 1,
+          "density": 33.333,
+          "example": "офис"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "доставка вода",
+          "count": 1,
+          "density": 33.333,
+          "example": "доставка вода"
+        },
+        {
+          "key": "вода в офис",
+          "count": 1,
+          "density": 33.333,
+          "example": "вода в офис"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "доставка вода в офис",
+          "count": 1,
+          "density": 33.333,
+          "example": "доставка вода в офис"
+        }
+      ]
+    },
+    "meta_description": {
+      "length": 37,
+      "length_trim": 30,
+      "sentences": 1,
+      "words_total": 8,
+      "words_count": 4,
+      "words_root_count": 4,
+      "water_percent": 50.0,
+      "nausea_classic": 1.0,
+      "nausea_academic": 12.5,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 4,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "вода",
+          "count": 1,
+          "density": 25.0,
+          "example": "Вода"
+        },
+        {
+          "key": "офис",
+          "count": 1,
+          "density": 25.0,
+          "example": "офис"
+        },
+        {
+          "key": "доставка",
+          "count": 1,
+          "density": 25.0,
+          "example": "доставкой"
+        },
+        {
+          "key": "день",
+          "count": 1,
+          "density": 25.0,
+          "example": "день"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "вода в офис",
+          "count": 1,
+          "density": 25.0,
+          "example": "вода в офис"
+        },
+        {
+          "key": "офис с доставка",
+          "count": 1,
+          "density": 25.0,
+          "example": "офис с доставка"
+        },
+        {
+          "key": "доставка за один день",
+          "count": 1,
+          "density": 25.0,
+          "example": "доставка за один день"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "вода в офис с доставка",
+          "count": 1,
+          "density": 25.0,
+          "example": "вода в офис с доставка"
+        },
+        {
+          "key": "офис с доставка за один день",
+          "count": 1,
+          "density": 25.0,
+          "example": "офис с доставка за один день"
+        }
+      ]
+    }
+  },
+  "structure": {
+    "h1_count": 1,
+    "h2_count": 0,
+    "h3_count": 0,
+    "li_count": 3,
+    "table_count": 0,
+    "heading_tree": [
+      {
+        "level": 1,
+        "text": "Доставка воды в офис",
+        "children": []
+      }
+    ]
+  },
+  "quality": {
+    "accepted": false,
+    "score": 13,
+    "reason": "знаков 150 < 240; слов 31 < 35",
+    "visible_chars": 150,
+    "words": 31,
+    "unique_words": 21,
+    "flags": []
+  }
+}

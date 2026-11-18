@@ -1,0 +1,67 @@
+[build-system]
+requires = ["pdm-backend>=2.4,<3"]
+build-backend = "pdm.backend"
+
+[project]
+name = "rb-textfactors"
+version = "0.1.0"
+description = "Measure and compare text metrics and HTML pages offline."
+readme = "README.md"
+license = "ISC"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+classifiers = ["Typing :: Typed"]
+dependencies = [
+    "interfacy>=0.11,<0.12",
+    "pandas>=3.0.6,<4",
+    "pydantic>=2.10,<3",
+    "rb-semkit>=0.2.11,<0.3",
+    "selectolax>=1.0.1,<2",
+    # Semkit needs dataio; declare it here to select its private index explicitly.
+    "rb-dataio>=0.1.26,<0.2",
+]
+
+[project.scripts]
+textfactors = "rb_textfactors._cli:main"
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.35,<1",
+    "pytest>=8.3,<10",
+    "ruff>=0.11,<1",
+    "ty>=0.0.14,<1",
+]
+docs = [
+    "mkdocstrings[python]>=0.29,<2",
+    "zensical>=0.0.21,<1",
+]
+
+[tool.uv.sources]
+rb-semkit = { index = "gitea" }
+rb-dataio = { index = "gitea" }
+
+[[tool.uv.index]]
+name = "gitea"
+url = "https://homeserver.tailee01ab.ts.net:3000/api/packages/bolandeu/pypi/simple"
+explicit = true
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
+
+[tool.ty.src]
+include = ["src", "tests"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.poe.tasks]
+lint = "ruff check src tests"
+format-check = "ruff format --check src tests"
+types = "ty check"
+test = "pytest"
+check = ["lint", "format-check", "types", "test"]

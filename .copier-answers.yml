@@ -1,0 +1,6 @@
+# Changes here will be overwritten by Copier.
+_commit: v0.3.0-2-g7551613
+_src_path: gh:bolandeu/python-library-starter
+dist_name: rb-textfactors
+project_description: A typed Python library with a generated CLI.
+project_name: textfactors

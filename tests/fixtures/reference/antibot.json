@@ -1,0 +1,530 @@
+{
+  "zones": {
+    "text": {
+      "length": 113,
+      "length_trim": 97,
+      "sentences": 3,
+      "words_total": 17,
+      "words_count": 12,
+      "words_root_count": 12,
+      "water_percent": 29.41,
+      "nausea_classic": 1.0,
+      "nausea_academic": 5.88,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 12,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "в норме",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "checking",
+          "count": 1,
+          "density": 8.333,
+          "example": "Checking"
+        },
+        {
+          "key": "your",
+          "count": 1,
+          "density": 8.333,
+          "example": "your"
+        },
+        {
+          "key": "browser",
+          "count": 1,
+          "density": 8.333,
+          "example": "browser"
+        },
+        {
+          "key": "before",
+          "count": 1,
+          "density": 8.333,
+          "example": "before"
+        },
+        {
+          "key": "accessing",
+          "count": 1,
+          "density": 8.333,
+          "example": "accessing"
+        },
+        {
+          "key": "site",
+          "count": 1,
+          "density": 8.333,
+          "example": "site"
+        },
+        {
+          "key": "verify",
+          "count": 1,
+          "density": 8.333,
+          "example": "Verify"
+        },
+        {
+          "key": "human",
+          "count": 1,
+          "density": 8.333,
+          "example": "human"
+        },
+        {
+          "key": "enable",
+          "count": 1,
+          "density": 8.333,
+          "example": "Enable"
+        },
+        {
+          "key": "javascript",
+          "count": 1,
+          "density": 8.333,
+          "example": "JavaScript"
+        },
+        {
+          "key": "cookies",
+          "count": 1,
+          "density": 8.333,
+          "example": "cookies"
+        },
+        {
+          "key": "continue",
+          "count": 1,
+          "density": 8.333,
+          "example": "continue"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "checking your",
+          "count": 1,
+          "density": 8.333,
+          "example": "checking your"
+        },
+        {
+          "key": "your browser",
+          "count": 1,
+          "density": 8.333,
+          "example": "your browser"
+        },
+        {
+          "key": "browser before",
+          "count": 1,
+          "density": 8.333,
+          "example": "browser before"
+        },
+        {
+          "key": "before accessing",
+          "count": 1,
+          "density": 8.333,
+          "example": "before accessing"
+        },
+        {
+          "key": "accessing the site",
+          "count": 1,
+          "density": 8.333,
+          "example": "accessing the site"
+        },
+        {
+          "key": "verify you are human",
+          "count": 1,
+          "density": 8.333,
+          "example": "verify you are human"
+        },
+        {
+          "key": "enable javascript",
+          "count": 1,
+          "density": 8.333,
+          "example": "enable javascript"
+        },
+        {
+          "key": "javascript and cookies",
+          "count": 1,
+          "density": 8.333,
+          "example": "javascript and cookies"
+        },
+        {
+          "key": "cookies to continue",
+          "count": 1,
+          "density": 8.333,
+          "example": "cookies to continue"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "checking your browser",
+          "count": 1,
+          "density": 8.333,
+          "example": "checking your browser"
+        },
+        {
+          "key": "your browser before",
+          "count": 1,
+          "density": 8.333,
+          "example": "your browser before"
+        },
+        {
+          "key": "browser before accessing",
+          "count": 1,
+          "density": 8.333,
+          "example": "browser before accessing"
+        },
+        {
+          "key": "before accessing the site",
+          "count": 1,
+          "density": 8.333,
+          "example": "before accessing the site"
+        },
+        {
+          "key": "enable javascript and cookies",
+          "count": 1,
+          "density": 8.333,
+          "example": "enable javascript and cookies"
+        },
+        {
+          "key": "javascript and cookies to continue",
+          "count": 1,
+          "density": 8.333,
+          "example": "javascript and cookies to continue"
+        }
+      ]
+    },
+    "headings": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    },
+    "links": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    },
+    "text_links": {
+      "length": 113,
+      "length_trim": 97,
+      "sentences": 3,
+      "words_total": 17,
+      "words_count": 12,
+      "words_root_count": 12,
+      "water_percent": 29.41,
+      "nausea_classic": 1.0,
+      "nausea_academic": 5.88,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 12,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "в норме",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "checking",
+          "count": 1,
+          "density": 8.333,
+          "example": "Checking"
+        },
+        {
+          "key": "your",
+          "count": 1,
+          "density": 8.333,
+          "example": "your"
+        },
+        {
+          "key": "browser",
+          "count": 1,
+          "density": 8.333,
+          "example": "browser"
+        },
+        {
+          "key": "before",
+          "count": 1,
+          "density": 8.333,
+          "example": "before"
+        },
+        {
+          "key": "accessing",
+          "count": 1,
+          "density": 8.333,
+          "example": "accessing"
+        },
+        {
+          "key": "site",
+          "count": 1,
+          "density": 8.333,
+          "example": "site"
+        },
+        {
+          "key": "verify",
+          "count": 1,
+          "density": 8.333,
+          "example": "Verify"
+        },
+        {
+          "key": "human",
+          "count": 1,
+          "density": 8.333,
+          "example": "human"
+        },
+        {
+          "key": "enable",
+          "count": 1,
+          "density": 8.333,
+          "example": "Enable"
+        },
+        {
+          "key": "javascript",
+          "count": 1,
+          "density": 8.333,
+          "example": "JavaScript"
+        },
+        {
+          "key": "cookies",
+          "count": 1,
+          "density": 8.333,
+          "example": "cookies"
+        },
+        {
+          "key": "continue",
+          "count": 1,
+          "density": 8.333,
+          "example": "continue"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "checking your",
+          "count": 1,
+          "density": 8.333,
+          "example": "checking your"
+        },
+        {
+          "key": "your browser",
+          "count": 1,
+          "density": 8.333,
+          "example": "your browser"
+        },
+        {
+          "key": "browser before",
+          "count": 1,
+          "density": 8.333,
+          "example": "browser before"
+        },
+        {
+          "key": "before accessing",
+          "count": 1,
+          "density": 8.333,
+          "example": "before accessing"
+        },
+        {
+          "key": "accessing the site",
+          "count": 1,
+          "density": 8.333,
+          "example": "accessing the site"
+        },
+        {
+          "key": "verify you are human",
+          "count": 1,
+          "density": 8.333,
+          "example": "verify you are human"
+        },
+        {
+          "key": "enable javascript",
+          "count": 1,
+          "density": 8.333,
+          "example": "enable javascript"
+        },
+        {
+          "key": "javascript and cookies",
+          "count": 1,
+          "density": 8.333,
+          "example": "javascript and cookies"
+        },
+        {
+          "key": "cookies to continue",
+          "count": 1,
+          "density": 8.333,
+          "example": "cookies to continue"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "checking your browser",
+          "count": 1,
+          "density": 8.333,
+          "example": "checking your browser"
+        },
+        {
+          "key": "your browser before",
+          "count": 1,
+          "density": 8.333,
+          "example": "your browser before"
+        },
+        {
+          "key": "browser before accessing",
+          "count": 1,
+          "density": 8.333,
+          "example": "browser before accessing"
+        },
+        {
+          "key": "before accessing the site",
+          "count": 1,
+          "density": 8.333,
+          "example": "before accessing the site"
+        },
+        {
+          "key": "enable javascript and cookies",
+          "count": 1,
+          "density": 8.333,
+          "example": "enable javascript and cookies"
+        },
+        {
+          "key": "javascript and cookies to continue",
+          "count": 1,
+          "density": 8.333,
+          "example": "javascript and cookies to continue"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "title": {
+      "length": 16,
+      "length_trim": 14,
+      "sentences": 1,
+      "words_total": 3,
+      "words_count": 2,
+      "words_root_count": 2,
+      "water_percent": 33.33,
+      "nausea_classic": 1.0,
+      "nausea_academic": 33.33,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 2,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "just",
+          "count": 1,
+          "density": 50.0,
+          "example": "Just"
+        },
+        {
+          "key": "moment",
+          "count": 1,
+          "density": 50.0,
+          "example": "moment"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "just a moment",
+          "count": 1,
+          "density": 50.0,
+          "example": "just a moment"
+        }
+      ],
+      "repeat_words_3": []
+    },
+    "h1": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    },
+    "meta_description": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    }
+  },
+  "structure": {
+    "h1_count": 0,
+    "h2_count": 0,
+    "h3_count": 0,
+    "li_count": 0,
+    "table_count": 0,
+    "heading_tree": []
+  },
+  "quality": {
+    "accepted": false,
+    "score": 0,
+    "reason": "антибот-проверка; заглушка вместо текста; знаков 105 < 240; слов 20 < 35",
+    "visible_chars": 105,
+    "words": 20,
+    "unique_words": 20,
+    "flags": [
+      "antibot",
+      "stub"
+    ]
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "zones": {
+    "text": {
+      "length": 229,
+      "length_trim": 200,
+      "sentences": 1,
+      "words_total": 30,
+      "words_count": 20,
+      "words_root_count": 2,
+      "water_percent": 33.33,
+      "nausea_classic": 3.16,
+      "nausea_academic": 33.33,
+      "zipf_quality": 0.0,
+      "ttr": 0.1,
+      "mtld": 3.33,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "квартира",
+          "count": 10,
+          "density": 50.0,
+          "example": "Квартира"
+        },
+        {
+          "key": "новостройка",
+          "count": 10,
+          "density": 50.0,
+          "example": "новостройке"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "квартира в новостройка",
+          "count": 10,
+          "density": 50.0,
+          "example": "квартира в новостройка"
+        },
+        {
+          "key": "новостройка квартира",
+          "count": 9,
+          "density": 45.0,
+          "example": "новостройка квартира"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "квартира в новостройка квартира",
+          "count": 9,
+          "density": 45.0,
+          "example": "квартира в новостройка квартира"
+        },
+        {
+          "key": "новостройка квартира в новостройка",
+          "count": 9,
+          "density": 45.0,
+          "example": "новостройка квартира в новостройка"
+        }
+      ]
+    },
+    "headings": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    },
+    "links": {
+      "length": 0,
+      "length_trim": 0,
+      "sentences": 0,
+      "words_total": 0,
+      "words_count": 0,
+      "words_root_count": 0,
+      "water_percent": 0.0,
+      "nausea_classic": 0.0,
+      "nausea_academic": 0.0,
+      "zipf_quality": 0.0,
+      "ttr": 0.0,
+      "mtld": 0.0,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "мало повторов",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [],
+      "repeat_words_2": [],
+      "repeat_words_3": []
+    },
+    "text_links": {
+      "length": 245,
+      "length_trim": 214,
+      "sentences": 1,
+      "words_total": 32,
+      "words_count": 22,
+      "words_root_count": 3,
+      "water_percent": 31.25,
+      "nausea_classic": 3.32,
+      "nausea_academic": 34.38,
+      "zipf_quality": 0.0,
+      "ttr": 0.136,
+      "mtld": 3.14,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "многовато воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "квартира",
+          "count": 11,
+          "density": 50.0,
+          "example": "квартир, Квартира"
+        },
+        {
+          "key": "новостройка",
+          "count": 10,
+          "density": 45.455,
+          "example": "новостройке"
+        },
+        {
+          "key": "каталог",
+          "count": 1,
+          "density": 4.545,
+          "example": "Каталог"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "квартира в новостройка",
+          "count": 10,
+          "density": 45.455,
+          "example": "квартира в новостройка"
+        },
+        {
+          "key": "новостройка квартира",
+          "count": 9,
+          "density": 40.909,
+          "example": "новостройка квартира"
+        },
+        {
+          "key": "каталог квартира",
+          "count": 1,
+          "density": 4.545,
+          "example": "каталог квартира"
+        }
+      ],
+      "repeat_words_3": [
+        {
+          "key": "квартира в новостройка квартира",
+          "count": 9,
+          "density": 40.909,
+          "example": "квартира в новостройка квартира"
+        },
+        {
+          "key": "новостройка квартира в новостройка",
+          "count": 9,
+          "density": 40.909,
+          "example": "новостройка квартира в новостройка"
+        }
+      ]
+    }
+  },
+  "meta": {
+    "title": {
+      "length": 15,
+      "length_trim": 14,
+      "sentences": 1,
+      "words_total": 2,
+      "words_count": 2,
+      "words_root_count": 2,
+      "water_percent": 0.0,
+      "nausea_classic": 1.0,
+      "nausea_academic": 50.0,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 2,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "каталог",
+          "count": 1,
+          "density": 50.0,
+          "example": "Каталог"
+        },
+        {
+          "key": "квартира",
+          "count": 1,
+          "density": 50.0,
+          "example": "квартир"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "каталог квартира",
+          "count": 1,
+          "density": 50.0,
+          "example": "каталог квартира"
+        }
+      ],
+      "repeat_words_3": []
+    },
+    "h1": {
+      "length": 15,
+      "length_trim": 14,
+      "sentences": 1,
+      "words_total": 2,
+      "words_count": 2,
+      "words_root_count": 2,
+      "water_percent": 0.0,
+      "nausea_classic": 1.0,
+      "nausea_academic": 50.0,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 2,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "мало воды"
+      },
+      "repeat_words_1": [
+        {
+          "key": "каталог",
+          "count": 1,
+          "density": 50.0,
+          "example": "Каталог"
+        },
+        {
+          "key": "квартира",
+          "count": 1,
+          "density": 50.0,
+          "example": "квартир"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "каталог квартира",
+          "count": 1,
+          "density": 50.0,
+          "example": "каталог квартира"
+        }
+      ],
+      "repeat_words_3": []
+    },
+    "meta_description": {
+      "length": 32,
+      "length_trim": 29,
+      "sentences": 1,
+      "words_total": 4,
+      "words_count": 3,
+      "words_root_count": 3,
+      "water_percent": 25.0,
+      "nausea_classic": 1.0,
+      "nausea_academic": 25.0,
+      "zipf_quality": 0.0,
+      "ttr": 1.0,
+      "mtld": 3,
+      "norms": {
+        "nausea_classic": "в норме",
+        "nausea_academic": "переспам",
+        "water_percent": "в норме"
+      },
+      "repeat_words_1": [
+        {
+          "key": "квартира",
+          "count": 1,
+          "density": 33.333,
+          "example": "Квартиры"
+        },
+        {
+          "key": "новостройка",
+          "count": 1,
+          "density": 33.333,
+          "example": "новостройке"
+        },
+        {
+          "key": "каталог",
+          "count": 1,
+          "density": 33.333,
+          "example": "каталог"
+        }
+      ],
+      "repeat_words_2": [
+        {
+          "key": "квартира в новостройка",
+          "count": 1,
+          "density": 33.333,
+          "example": "квартира в новостройка"
+        }
+      ],
+      "repeat_words_3": []
+    }
+  },
+  "structure": {
+    "h1_count": 1,
+    "h2_count": 0,
+    "h3_count": 0,
+    "li_count": 10,
+    "table_count": 0,
+    "heading_tree": [
+      {
+        "level": 1,
+        "text": "Каталог квартир",
+        "children": []
+      }
+    ]
+  },
+  "quality": {
+    "accepted": false,
+    "score": 0,
+    "reason": "повторяющиеся блоки; знаков 228 < 240; слов 34 < 35; разных слов 5 < 18",
+    "visible_chars": 228,
+    "words": 34,
+    "unique_words": 5,
+    "flags": [
+      "repeated_blocks"
+    ]
+  }
+}
