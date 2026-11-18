@@ -2,6 +2,7 @@
 
 from .operations import (
     average,
+    check_html_keywords,
     check_keywords,
     compare,
     compare_with_set,
@@ -11,6 +12,7 @@ from .operations import (
 
 __all__ = [
     "average",
+    "check_html_keywords",
     "check_keywords",
     "compare",
     "compare_with_set",

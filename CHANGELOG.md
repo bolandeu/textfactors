@@ -10,7 +10,9 @@
   panels from HTML measurement; a CAPTCHA widget no longer marks a full page as
   blocked.
 - Add `check_keywords` / `textfactors run check-keywords`: exact, lemma,
-  diluted and reverse occurrence counts with density and optional targets.
+  diluted, reverse and any-word occurrence counts with density and optional targets.
+- Add `check_html_keywords` / `textfactors run check-html-keywords`: same checks
+  on a cleaned page zone, with `--file` support.
 
 ## [0.1.0]
 

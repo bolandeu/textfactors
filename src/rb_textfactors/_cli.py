@@ -50,7 +50,11 @@ def _build_app(functions: dict[str, FunctionType]) -> Interfacy:
             if parameter != "return" and isinstance(annotation, type):
                 if issubclass(annotation, BaseModel):
                     app.add_type_parser(annotation, annotation.model_validate_json)
-        content = {"measure-text": "text", "measure-html": "html"}.get(name)
+        content = {
+            "measure-text": "text",
+            "measure-html": "html",
+            "check-html-keywords": "html",
+        }.get(name)
         if content is None:
             group.add_command(operation, name=name)
         else:

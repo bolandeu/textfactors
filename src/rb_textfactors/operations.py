@@ -132,6 +132,7 @@ def check_keywords(
     lemma: bool = True,
     diluted: bool = False,
     reverse: bool = False,
+    any_word: bool = False,
     window: int = 3,
 ) -> dict:
     """Count given keyword phrases in a text and check them against occurrence targets.
@@ -146,6 +147,7 @@ def check_keywords(
         lemma: Count the phrase in any grammatical form with words kept together.
         diluted: Count the phrase with up to ``window`` other words between its words.
         reverse: Count the phrase with its words in reverse order, gaps allowed.
+        any_word: Count every occurrence of a single phrase word, whatever its form.
         window: Maximum number of extra words between phrase words for diluted and reverse.
 
     Returns:
@@ -165,5 +167,80 @@ def check_keywords(
         lemma=lemma,
         diluted=diluted,
         reverse=reverse,
+        any_word=any_word,
         window=window,
     )
+
+
+def check_html_keywords(
+    html: str,
+    keywords: list[str] | None = None,
+    *,
+    block: str = "text",
+    targets: list[int] | None = None,
+    exact: bool = True,
+    lemma: bool = True,
+    diluted: bool = False,
+    reverse: bool = False,
+    any_word: bool = False,
+    window: int = 3,
+) -> dict:
+    """Check keyword phrases in HTML after the same cleanup used for measurement.
+
+    Args:
+        html: Page content as a single argument. Scripts, menu, footer, reviews
+            widgets, cookie banners and related-post blocks are removed first.
+        keywords: Phrases to look for, in the order they should be reported.
+        block: Zone to check: ``text``, ``headings``, ``links``, ``text_links``,
+            ``title``, ``h1`` or ``meta_description``. Headings are separate zones,
+            so ``text`` does not contain the H1 or H2 wording.
+        targets: Required occurrences per keyword, one value per phrase. Omit to skip
+            the pass/fail check and report counts only.
+        exact: Count the phrase as written, ignoring case.
+        lemma: Count the phrase in any grammatical form with words kept together.
+        diluted: Count the phrase with up to ``window`` other words between its words.
+        reverse: Count the phrase with its words in reverse order, gaps allowed.
+        any_word: Count every occurrence of a single phrase word, whatever its form.
+        window: Maximum number of extra words between phrase words for diluted and reverse.
+
+    Returns:
+        The checked block name, the per-keyword result from ``check_keywords``,
+        and the page quality verdict.
+
+    Raises:
+        ValueError: The page is blank, the block or keyword options are invalid.
+    """
+    from .core import keywords as checks
+    from .core.corridors import BLOCKS
+    from .core.errors import InvalidArguments
+    from .core.pages import page_texts
+
+    if block not in BLOCKS:
+        raise InvalidArguments("block must be one of: " + ", ".join(BLOCKS) + ".")
+    if keywords is None:
+        raise InvalidArguments("keywords are required.")
+    texts = page_texts(html)
+    result = checks.check_keywords(
+        texts[block],
+        keywords,
+        targets=targets,
+        exact=exact,
+        lemma=lemma,
+        diluted=diluted,
+        reverse=reverse,
+        any_word=any_word,
+        window=window,
+    )
+    from .core.pages import _quality
+
+    quality = _quality(html)
+    return {
+        "block": block,
+        "words_total": result["words_total"],
+        "keywords": result["keywords"],
+        "found": result["found"],
+        "missing": result["missing"],
+        "met": result["met"],
+        "unmet": result["unmet"],
+        "quality": {"accepted": quality["accepted"], "score": quality["score"]},
+    }

@@ -150,11 +150,23 @@ Match types are opt-in flags:
 - `exact` (default) — phrase as written, case and `ё` ignored;
 - `lemma` (default) — any grammatical form, words still adjacent;
 - `diluted` — up to `window` other words between phrase words, order kept;
-- `reverse` — phrase words in reverse order, gaps allowed.
+- `reverse` — phrase words in reverse order, gaps allowed;
+- `any_word` — every occurrence of a single phrase word, whatever its form.
 
 Counts never overlap: each occurrence is classified by the first enabled rule
 that matches. `density` is the found count per 100 words. Without `targets`,
 `met` is `null` and only counts are reported.
+
+For HTML, `check_html_keywords` applies the same page cleanup and checks one
+zone: `text` (default), `headings`, `links`, `text_links`, `title`, `h1` or
+`meta_description`. The result adds the zone name and the page quality verdict.
+
+```python
+from rb_textfactors import check_html_keywords
+
+page = check_html_keywords(html, ["таможенный представитель", "вэд"], block="text")
+title = check_html_keywords(html, ["таможенный представитель"], block="title")
+```
 
 ## Build, document, and release
 

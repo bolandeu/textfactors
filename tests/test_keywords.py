@@ -6,7 +6,7 @@ import sys
 
 import pytest
 
-from rb_textfactors import check_keywords
+from rb_textfactors import check_html_keywords, check_keywords
 
 TEXT = (
     "Таможенный представитель оформляет импортные грузы. "
@@ -105,3 +105,48 @@ def test_cli_call_matches_python_and_accepts_jsonl() -> None:
     assert json.loads(result.stdout) == check_keywords(
         TEXT, ["таможенный", "брокер"], targets=[2, 1]
     )
+
+
+def test_any_word_counts_each_phrase_word_separately() -> None:
+    text = "Таможенный представитель оформляет грузы и платежи. Брокер помогает."
+    result = check_keywords(
+        text, ["таможенный представитель"], exact=False, lemma=False, any_word=True
+    )
+    row = result["keywords"][0]
+    assert row["find"] == 2
+    assert row["density"] == round(2 / result["words_total"] * 100, 3)
+
+
+def test_any_word_does_not_double_count_an_exact_phrase() -> None:
+    text = "Таможенный представитель оформляет грузы."
+    with_exact = check_keywords(text, ["таможенный представитель"], any_word=True)
+    without_exact = check_keywords(
+        text, ["таможенный представитель"], exact=False, lemma=False, any_word=True
+    )
+    assert with_exact["keywords"][0]["find"] == 1
+    assert without_exact["keywords"][0]["find"] == 2
+
+
+def test_html_zone_selection_and_page_cleanup() -> None:
+    html = (
+        "<title>Таможенный представитель в Москве</title>"
+        "<h1>Таможенный представитель</h1>"
+        "<p>Оформляем импортные грузы.</p>"
+        '<div class="rb-reviews-widget"><p>Брокер брокер брокер</p></div>'
+    )
+    text = check_html_keywords(html, ["таможенный", "брокер"], targets=[1, 0])
+    title = check_html_keywords(html, ["москва"], block="title")
+    h1 = check_html_keywords(html, ["таможенный"], block="h1")
+    assert text["block"] == "text"
+    assert [row["find"] for row in text["keywords"]] == [0, 0]
+    assert text["keywords"][1]["met"] is True
+    assert title["keywords"][0]["find"] == 1
+    assert h1["keywords"][0]["find"] == 1
+    assert text["quality"] == {"accepted": False, "score": 5}
+
+
+def test_html_keywords_reject_unknown_block_and_blank_page() -> None:
+    with pytest.raises(ValueError, match="block"):
+        check_html_keywords("<p>Текст</p>", ["текст"], block="body")
+    with pytest.raises(ValueError, match="html"):
+        check_html_keywords("  ", ["текст"])

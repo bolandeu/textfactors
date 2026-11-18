@@ -30,6 +30,7 @@ def cli(*args: str) -> subprocess.CompletedProcess[str]:
 def test_public_exports_and_generated_command_help() -> None:
     exports = {
         "average",
+        "check_html_keywords",
         "check_keywords",
         "compare",
         "compare_with_set",
@@ -243,7 +244,7 @@ def test_doctor_checks_the_installed_cli() -> None:
 def test_doctor_reports_failed_check_without_raw_error(
     capsys: pytest.CaptureFixture[str], monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    def broken_guide(*args: object) -> str:
+    def broken_guide(*_args: object) -> str:
         raise RuntimeError("do-not-echo-me")
 
     monkeypatch.setattr(_cli_docs, "skill", broken_guide)

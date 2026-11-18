@@ -159,6 +159,14 @@ def _blocks(html: str, clean: str, headings: list[tuple[int, str]]) -> dict[str,
     }
 
 
+def page_texts(html: str) -> dict[str, str]:
+    """Return the seven cleaned block texts that measure_html counts."""
+    if not isinstance(html, str) or not html.strip():
+        raise InvalidArguments("html must be a non-blank string.")
+    clean = _noise_cut(html, noindex=True)
+    return _blocks(html, clean, _headings(clean))
+
+
 def _heading_tree(headings: list[tuple[int, str]]) -> list[Heading]:
     tree: list[Heading] = []
     stack: list[Heading] = []

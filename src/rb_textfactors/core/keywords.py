@@ -10,7 +10,7 @@ from .errors import InvalidArguments
 from .metrics import TOKEN, _fold
 
 DEFAULT_WINDOW = 3
-Matcher = Literal["exact", "lemma", "diluted", "reverse"]
+Matcher = Literal["exact", "lemma", "diluted", "reverse", "any"]
 
 
 class KeywordResult(TypedDict):
@@ -29,6 +29,7 @@ def _check_options(
     lemma: object,
     diluted: object,
     reverse: object,
+    any_word: object,
     window: object,
 ) -> None:
     if not isinstance(text, str):
@@ -45,9 +46,9 @@ def _check_options(
             for target in targets
         ):
             raise InvalidArguments("targets must be whole numbers of 0 or more.")
-    if not all(isinstance(flag, bool) for flag in (exact, lemma, diluted, reverse)):
-        raise InvalidArguments("exact, lemma, diluted and reverse must be true or false.")
-    if not (exact or lemma or diluted or reverse):
+    if not all(isinstance(flag, bool) for flag in (exact, lemma, diluted, reverse, any_word)):
+        raise InvalidArguments("exact, lemma, diluted, reverse and any_word must be true or false.")
+    if not (exact or lemma or diluted or reverse or any_word):
         raise InvalidArguments("Enable at least one match type.")
     if isinstance(window, bool) or not isinstance(window, int) or window < 0:
         raise InvalidArguments("window must be a whole number of 0 or more.")
@@ -90,6 +91,7 @@ def _count(
     lemma: bool,
     diluted: bool,
     reverse: bool,
+    any_word: bool,
     window: int,
 ) -> int:
     size = len(phrase_lemmas)
@@ -105,6 +107,8 @@ def _count(
             end = _span(lemmas, phrase_lemmas, index, window)
         elif reverse and lemmas[index] == phrase_lemmas[-1]:
             end = _span(lemmas, phrase_lemmas[::-1], index, window)
+        elif any_word and lemmas[index] in phrase_lemmas:
+            end = index
         if end is None:
             index += 1
             continue
@@ -122,10 +126,11 @@ def check_keywords(
     lemma: bool,
     diluted: bool,
     reverse: bool,
+    any_word: bool,
     window: int,
 ) -> dict:
     """Count each keyword phrase in the text and compare it with an optional target."""
-    _check_options(text, keywords, targets, exact, lemma, diluted, reverse, window)
+    _check_options(text, keywords, targets, exact, lemma, diluted, reverse, any_word, window)
     forms, lemmas = _tokens(text)
     total = len(forms)
     rows: list[KeywordResult] = []
@@ -140,6 +145,7 @@ def check_keywords(
             lemma=lemma,
             diluted=diluted,
             reverse=reverse,
+            any_word=any_word,
             window=window,
         )
         target = targets[position] if targets is not None else None
