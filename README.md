@@ -116,6 +116,13 @@ comparison computes its corridor from the reference items alone and reads
 missing keys from the `text` and `text_links` repeat tables; use full repeat
 tables for this analysis (`top_n=0`).
 
+Before counting, `measure_html` drops page chrome: scripts, styles, navigation,
+footer, aside, forms, reviews widgets (`.rb-reviews`, Trustindex, WP Google
+Reviews), cookie banners, related-post blocks, share buttons, sitemap widgets
+and `[hidden]`/`[aria-hidden]` nodes. A contact panel with a form and a
+"Свяжитесь с нами" heading is dropped whole, so its heading is not counted as
+content. Pass already-clean article HTML if you need the full page text.
+
 The five Python signatures and result keys follow `rb_textmetrics`; this
 package does not import it. Text processing uses the same Semkit library as
 the reference. A null `blocks` map is treated like an absent map, including

@@ -3,6 +3,12 @@ scripts. Results are read-only. A page with `quality.accepted: false` still
 has its seven measured blocks; check `quality.reason` before using a page as a
 reference.
 
+`measure_html` removes page chrome before counting: menu, footer, forms,
+reviews widgets, cookie banners, related-post blocks, share buttons, sitemap
+widgets and hidden nodes. A contact panel with a form and a
+"Свяжитесь с нами" heading is removed whole. The same rules apply to every
+page, so comparisons stay consistent.
+
 ```sh
 textfactors --json --no-input run measure-text 'Доставка грузов из Китая' --top-n 1
 ```

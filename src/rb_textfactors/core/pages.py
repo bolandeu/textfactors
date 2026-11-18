@@ -39,6 +39,29 @@ NOISE = (
     "select",
     "option",
     "dialog",
+    ".rb-reviews-widget",
+    ".rb-reviews",
+    ".ti-widget",
+    ".wp-gr",
+    ".wp-google-review",
+    "[class*='reviews-widget']",
+    "[class*='review-widget']",
+    ".cookie-notification",
+    "#cookie-notice",
+    "#cookie-law-info-bar",
+    "#onetrust-banner-sdk",
+    "[class*='cookie-consent']",
+    "[class*='cookies-consent']",
+    ".ct-related-posts",
+    ".ct-share-box",
+    ".post-navigation",
+    ".ct-breadcrumbs",
+    ".ct-header",
+    ".rb-sitemap",
+    "[role='navigation']",
+    "[role='contentinfo']",
+    "[hidden]",
+    "[aria-hidden='true']",
 )
 NOINDEX_COMMENT = re.compile(
     r"<!--\s*noindex\s*-->.*?<!--\s*/noindex\s*-->", re.DOTALL | re.IGNORECASE
@@ -62,6 +85,9 @@ STUB = (
     "site under construction",
     "domain for sale",
     "verify you are human",
+    "идет загрузка",
+    "идёт загрузка",
+    "antibot cloud",
 )
 FLAG_REASON = {
     "antibot": "антибот-проверка",
@@ -85,6 +111,19 @@ class Heading(TypedDict):
 def _noise_cut(html: str, *, noindex: bool) -> str:
     source = NOINDEX_COMMENT.sub(" ", html) if noindex else html
     tree = LexborHTMLParser(source)
+    # Remove standalone contact panels, never a service section merely containing a form.
+    contact_titles = {"свяжитесь с нами", "обратная связь", "заказать звонок", "contact us"}
+    for node in reversed(tree.css("article, section")):
+        headings = node.css("h1, h2, h3, h4, h5, h6")
+        if (
+            node.css_first("form") is not None
+            and headings
+            and any(
+                heading.tag != "h1" and heading.text().strip().lower() in contact_titles
+                for heading in headings
+            )
+        ):
+            node.decompose()
     selector = ", ".join((*NOISE, "noindex") if noindex else NOISE)
     # Remove descendants first so recursive decomposition never invalidates a later node.
     for node in reversed(tree.css(selector)):
@@ -148,9 +187,12 @@ def _structure(clean: str, headings: list[tuple[int, str]]) -> dict:
 def _flags(html: str, text: str, words: int, unique_words: int) -> list[str]:
     found: list[str] = []
     raw = html.lower()
-    if any(marker in raw for marker in ANTIBOT):
+    # A widget inside JS is not a wall: a marker counts only when visible text is a stub.
+    lowered = text.lower()
+    stub_text = any(marker in lowered for marker in STUB)
+    if any(marker in raw for marker in ANTIBOT) and stub_text:
         found.append("antibot")
-    if any(marker in raw for marker in STUB):
+    if stub_text:
         found.append("stub")
     script_chars = sum(len(node.text() or "") for node in LexborHTMLParser(html).css("script"))
     if script_chars > SCRIPT_SHARE * len(html) and words < 120:

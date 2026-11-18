@@ -90,6 +90,52 @@ def test_script_dominated_page_is_rejected_without_losing_its_blocks() -> None:
     assert result["blocks"]["text"] == measure_text("Абзац")
 
 
+def test_captcha_widget_does_not_reject_a_full_page() -> None:
+    text = (
+        "Таможенный представитель оформляет импортные документы для внешнеэкономической деятельности. "
+        "Специалисты рассчитывают платежи, проверяют декларации, сопровождают транзит и "
+        "консультируют клиентов по классификации товаров, срокам выпуска, рискам и стоимости. "
+        "Компания готовит документы, взаимодействует с таможенными органами и помогает "
+        "снизить задержки при выпуске грузов."
+    )
+    result = measure_html(
+        f"<h1>Таможенный представитель</h1><p>{text}</p>"
+        '<div class="g-recaptcha" data-sitekey="public-widget-key"></div>'
+    )
+    assert result["quality"]["accepted"] is True
+    assert result["quality"]["flags"] == []
+    assert result["quality"]["score"] >= 40
+
+
+def test_challenge_text_rejects_a_short_captcha_page() -> None:
+    result = measure_html(
+        '<div id="cf-turnstile"><p>Checking your browser before accessing the site.</p>'
+        "<p>Verify you are human.</p></div>"
+    )
+    assert result["quality"]["accepted"] is False
+    assert result["quality"]["flags"] == ["antibot", "stub"]
+
+
+def test_page_chrome_is_not_measured_as_content() -> None:
+    body = (
+        "<h1>Таможенный представитель</h1>"
+        "<p>Оформляем импортные грузы и консультируем по внешнеэкономической деятельности.</p>"
+        '<div class="rb-reviews-widget"><h2>Отзывы</h2><p>Яндекс 5, Google 5</p></div>'
+        '<div class="cookie-notification"><p>Мы используем куки.</p></div>'
+        '<div class="ct-related-posts"><h2>Похожие услуги</h2><p>Таможенный склад</p></div>'
+        '<article><h2>Свяжитесь с нами</h2><form><input name="phone"></form></article>'
+    )
+    result = measure_html(f"<html><body>{body}</body></html>")
+    assert result["structure"]["h2_count"] == 0
+    assert result["structure"]["heading_tree"] == [
+        {"level": 1, "text": "Таможенный представитель", "children": []}
+    ]
+    assert result["blocks"]["text"] == measure_text(
+        "Оформляем импортные грузы и консультируем по внешнеэкономической деятельности."
+    )
+    assert "Яндекс" not in result["blocks"]["text_links"]["repeat_words_1"][0]["example"]
+
+
 def test_plain_page_and_empty_html() -> None:
     result = measure_html("  Только  текст \n без  тегов ")
     assert (
