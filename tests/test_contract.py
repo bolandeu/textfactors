@@ -28,7 +28,14 @@ def cli(*args: str) -> subprocess.CompletedProcess[str]:
 
 
 def test_public_exports_and_generated_command_help() -> None:
-    exports = {"average", "compare", "compare_with_set", "measure_html", "measure_text"}
+    exports = {
+        "average",
+        "check_keywords",
+        "compare",
+        "compare_with_set",
+        "measure_html",
+        "measure_text",
+    }
     assert len(api.__all__) == len(exports)
     assert set(api.__all__) == exports
     discovered: list[str] = []

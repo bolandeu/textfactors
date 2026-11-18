@@ -121,3 +121,49 @@ def compare_with_set(
     return compare_set.compare_with_set(
         own, items, share=share, blocks=blocks, min_key_count=min_key_count
     )
+
+
+def check_keywords(
+    text: str,
+    keywords: list[str],
+    *,
+    targets: list[int] | None = None,
+    exact: bool = True,
+    lemma: bool = True,
+    diluted: bool = False,
+    reverse: bool = False,
+    window: int = 3,
+) -> dict:
+    """Count given keyword phrases in a text and check them against occurrence targets.
+
+    Args:
+        text: Plain text as a single argument. Pass the measured ``blocks.text`` content,
+            not raw HTML: markup and page chrome would add false matches.
+        keywords: Phrases to look for, in the order they should be reported.
+        targets: Required occurrences per keyword, one value per phrase. Omit to skip
+            the pass/fail check and report counts only.
+        exact: Count the phrase as written, ignoring case.
+        lemma: Count the phrase in any grammatical form with words kept together.
+        diluted: Count the phrase with up to ``window`` other words between its words.
+        reverse: Count the phrase with its words in reverse order, gaps allowed.
+        window: Maximum number of extra words between phrase words for diluted and reverse.
+
+    Returns:
+        Word count, one row per keyword with found count, density, target and result,
+        plus totals for found, missing, met and unmet keywords.
+
+    Raises:
+        ValueError: The text, keyword list, target list or an option is invalid.
+    """
+    from .core.keywords import check_keywords as check
+
+    return check(
+        text,
+        keywords,
+        targets=targets,
+        exact=exact,
+        lemma=lemma,
+        diluted=diluted,
+        reverse=reverse,
+        window=window,
+    )

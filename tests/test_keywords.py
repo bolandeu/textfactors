@@ -1,0 +1,107 @@
+"""Check keyword occurrence counting, targets and CLI parity."""
+
+import json
+import subprocess
+import sys
+
+import pytest
+
+from rb_textfactors import check_keywords
+
+TEXT = (
+    "Таможенный представитель оформляет импортные грузы. "
+    "Опытный таможенный и надёжный представитель работает в Москве. "
+    "Представитель таможенный выезжает на склад."
+)
+
+
+def test_exact_lemma_and_diluted_matches_are_counted_separately() -> None:
+    exact = check_keywords(TEXT, ["таможенный представитель"])
+    lemma = check_keywords(TEXT, ["таможенный представитель"], exact=False)
+    diluted = check_keywords(TEXT, ["таможенный представитель"], exact=False, diluted=True)
+    assert exact["keywords"][0]["find"] == 1
+    assert lemma["keywords"][0]["find"] == 1
+    assert diluted["keywords"][0]["find"] == 2
+    assert diluted["keywords"][0]["density"] == round(2 / diluted["words_total"] * 100, 3)
+
+
+def test_reverse_order_matches_only_when_enabled() -> None:
+    text = "Представитель таможенный оформляет грузы."
+    assert check_keywords(text, ["таможенный представитель"])["keywords"][0]["find"] == 0
+    result = check_keywords(text, ["таможенный представитель"], reverse=True)
+    assert result["keywords"][0]["find"] == 1
+
+
+def test_window_limits_the_gap_between_phrase_words() -> None:
+    text = "Таможенный очень опытный и надёжный представитель"
+    assert (
+        check_keywords(text, ["таможенный представитель"], exact=False)["keywords"][0]["find"] == 0
+    )
+    wide = check_keywords(text, ["таможенный представитель"], exact=False, diluted=True, window=4)
+    narrow = check_keywords(text, ["таможенный представитель"], exact=False, diluted=True, window=3)
+    assert wide["keywords"][0]["find"] == 1
+    assert narrow["keywords"][0]["find"] == 0
+
+
+def test_targets_report_met_and_unmet_keywords() -> None:
+    result = check_keywords(TEXT, ["таможенный", "брокер", "представитель"], targets=[2, 1, 3])
+    assert [row["met"] for row in result["keywords"]] == [True, False, True]
+    assert (result["found"], result["missing"]) == (2, 1)
+    assert (result["met"], result["unmet"]) == (2, 1)
+    assert result["keywords"][0]["target"] == 2
+    assert result["keywords"][0]["density"] == round(3 / result["words_total"] * 100, 3)
+
+
+def test_without_targets_counts_only_and_keeps_text_order() -> None:
+    result = check_keywords(TEXT, ["брокер", "таможенный"])
+    assert [row["keyword"] for row in result["keywords"]] == ["брокер", "таможенный"]
+    assert [row["met"] for row in result["keywords"]] == [None, None]
+    assert result["met"] == result["unmet"] == 0
+
+
+def test_empty_text_and_empty_keyword_list() -> None:
+    empty = check_keywords("", ["брокер"], targets=[0])
+    assert empty["words_total"] == 0
+    assert empty["keywords"][0] == {
+        "keyword": "брокер",
+        "find": 0,
+        "density": 0.0,
+        "target": 0,
+        "met": True,
+    }
+    assert check_keywords(TEXT, [])["keywords"] == []
+
+
+@pytest.mark.parametrize(
+    "arguments",
+    [
+        {"text": 1, "keywords": ["брокер"]},
+        {"text": TEXT, "keywords": "брокер"},
+        {"text": TEXT, "keywords": ["  "]},
+        {"text": TEXT, "keywords": ["123"]},
+        {"text": TEXT, "keywords": ["брокер"], "targets": [1, 2]},
+        {"text": TEXT, "keywords": ["брокер"], "targets": [-1]},
+        {"text": TEXT, "keywords": ["брокер"], "targets": [True]},
+        {"text": TEXT, "keywords": ["брокер"], "exact": False, "lemma": False},
+        {"text": TEXT, "keywords": ["брокер"], "window": -1},
+    ],
+)
+def test_invalid_input_raises_value_error(arguments: dict) -> None:
+    with pytest.raises(ValueError):
+        check_keywords(**arguments)
+
+
+def test_cli_call_matches_python_and_accepts_jsonl() -> None:
+    request = json.dumps({"text": TEXT, "keywords": ["таможенный", "брокер"], "targets": [2, 1]})
+    result = subprocess.run(
+        [sys.executable, "-m", "rb_textfactors", "--json", "--no-input", "run", "check-keywords"],
+        input=request,
+        text=True,
+        capture_output=True,
+        check=False,
+        timeout=15,
+    )
+    assert result.returncode == 0, result.stderr
+    assert json.loads(result.stdout) == check_keywords(
+        TEXT, ["таможенный", "брокер"], targets=[2, 1]
+    )

@@ -130,6 +130,32 @@ inside a mixed reference set. Malformed block shapes, invalid repeat key,
 count or density values, and non-finite metrics raise `ValueError` instead
 of leaking internal exceptions or returning values unsupported by JSON.
 
+## Check keywords
+
+`check_keywords` counts given phrases in a text and compares them with
+targets. It works offline and does not call the Миратекст API.
+
+```python
+from rb_textfactors import check_keywords, measure_html
+
+text = measure_html(html)["blocks"]["text"]
+report = check_keywords(text, ["таможенный представитель", "вэд"], targets=[3, 2])
+assert report["words_total"] == text["words_total"]
+for row in report["keywords"]:
+    print(row["keyword"], row["find"], row["density"], row["met"])
+```
+
+Match types are opt-in flags:
+
+- `exact` (default) — phrase as written, case and `ё` ignored;
+- `lemma` (default) — any grammatical form, words still adjacent;
+- `diluted` — up to `window` other words between phrase words, order kept;
+- `reverse` — phrase words in reverse order, gaps allowed.
+
+Counts never overlap: each occurrence is classified by the first enabled rule
+that matches. `density` is the found count per 100 words. Without `targets`,
+`met` is `null` and only counts are reported.
+
 ## Build, document, and release
 
 ```sh

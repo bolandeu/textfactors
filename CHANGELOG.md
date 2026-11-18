@@ -9,6 +9,8 @@
 - Drop reviews widgets, cookie banners, related posts, share bars and contact
   panels from HTML measurement; a CAPTCHA widget no longer marks a full page as
   blocked.
+- Add `check_keywords` / `textfactors run check-keywords`: exact, lemma,
+  diluted and reverse occurrence counts with density and optional targets.
 
 ## [0.1.0]
 
