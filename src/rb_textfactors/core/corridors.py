@@ -36,8 +36,7 @@ def measured_blocks(item: object, field: str) -> MeasureBlocks:
     if blocks is None:
         return {}
     if not isinstance(blocks, dict) or not all(
-        isinstance(name, str) and (block is None or isinstance(block, dict))
-        for name, block in blocks.items()
+        isinstance(name, str) and (block is None or isinstance(block, dict)) for name, block in blocks.items()
     ):
         raise InvalidArguments(f"{field}.blocks must map block names to objects or null.")
     return blocks
@@ -99,10 +98,7 @@ def average(items: list[dict], *, blocks: list[str] | None) -> dict:
         "blocks": {
             name: {
                 "count": len(carried[name]),
-                "metrics": {
-                    metric: corridor(values)
-                    for metric, values in numbers_of(carried[name], name).items()
-                },
+                "metrics": {metric: corridor(values) for metric, values in numbers_of(carried[name], name).items()},
             }
             for name in names
             if carried[name]

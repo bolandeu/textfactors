@@ -63,9 +63,7 @@ NOISE = (
     "[hidden]",
     "[aria-hidden='true']",
 )
-NOINDEX_COMMENT = re.compile(
-    r"<!--\s*noindex\s*-->.*?<!--\s*/noindex\s*-->", re.DOTALL | re.IGNORECASE
-)
+NOINDEX_COMMENT = re.compile(r"<!--\s*noindex\s*-->.*?<!--\s*/noindex\s*-->", re.DOTALL | re.IGNORECASE)
 TOKEN = re.compile(r"[а-яёa-z]+(?:-[а-яёa-z]+)*")
 VISIBLE = re.compile(r"[^\W_]")
 ANTIBOT = (
@@ -118,10 +116,7 @@ def _noise_cut(html: str, *, noindex: bool) -> str:
         if (
             node.css_first("form") is not None
             and headings
-            and any(
-                heading.tag != "h1" and heading.text().strip().lower() in contact_titles
-                for heading in headings
-            )
+            and any(heading.tag != "h1" and heading.text().strip().lower() in contact_titles for heading in headings)
         ):
             node.decompose()
     selector = ", ".join((*NOISE, "noindex") if noindex else NOISE)
@@ -223,19 +218,9 @@ def _flags(html: str, text: str, words: int, unique_words: int) -> list[str]:
 
 
 def _score(visible_chars: int, words: int, unique_words: int, headings: int) -> int:
-    score = (
-        40
-        if visible_chars >= 1200
-        else 28
-        if visible_chars >= 500
-        else 14
-        if visible_chars >= 240
-        else 0
-    )
+    score = 40 if visible_chars >= 1200 else 28 if visible_chars >= 500 else 14 if visible_chars >= 240 else 0
     score += 30 if words >= 140 else 22 if words >= 70 else 12 if words >= 35 else 0
-    score += (
-        20 if unique_words >= 80 else 14 if unique_words >= 35 else 8 if unique_words >= 18 else 0
-    )
+    score += 20 if unique_words >= 80 else 14 if unique_words >= 35 else 8 if unique_words >= 18 else 0
     return score + (5 if headings else 0)
 
 
@@ -288,9 +273,7 @@ def measure_html(
     headings = _headings(clean)
     return {
         "blocks": {
-            name: metrics.measure_text(
-                text, ignore_words=ignore_words, stop_phrases=stop_phrases, top_n=top_n
-            )
+            name: metrics.measure_text(text, ignore_words=ignore_words, stop_phrases=stop_phrases, top_n=top_n)
             for name, text in _blocks(html, clean, headings).items()
         },
         "structure": _structure(clean, headings),

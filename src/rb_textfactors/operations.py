@@ -118,9 +118,7 @@ def compare_with_set(
     """
     from .core import compare_set
 
-    return compare_set.compare_with_set(
-        own, items, share=share, blocks=blocks, min_key_count=min_key_count
-    )
+    return compare_set.compare_with_set(own, items, share=share, blocks=blocks, min_key_count=min_key_count)
 
 
 def check_keywords(

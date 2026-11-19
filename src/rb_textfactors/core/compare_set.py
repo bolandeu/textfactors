@@ -63,10 +63,7 @@ def _figures(metric: str, own: float, values: list[float]) -> SetMetric:
 
 def _block(own: MeasureBlocks, items: list[MeasureBlocks], name: str) -> dict[str, SetMetric]:
     mine = numbers(own.get(name))
-    return {
-        metric: _figures(metric, mine.get(metric, 0), values)
-        for metric, values in numbers_of(items, name).items()
-    }
+    return {metric: _figures(metric, mine.get(metric, 0), values) for metric, values in numbers_of(items, name).items()}
 
 
 def _keys(block: dict | None) -> dict[str, dict]:
@@ -86,16 +83,12 @@ def _keys(block: dict | None) -> dict[str, dict]:
 
 def _row_number(row: dict, field: str) -> float:
     value = row.get(field, 0)
-    if not isinstance(value, (int, float)) or (
-        isinstance(value, float) and not math.isfinite(value)
-    ):
+    if not isinstance(value, (int, float)) or (isinstance(value, float) and not math.isfinite(value)):
         raise InvalidArguments(f"A repeat row's {field} must be a finite number.")
     return value
 
 
-def _missing(
-    own: MeasureBlocks, items: list[MeasureBlocks], share: float, min_key_count: int
-) -> list[MissingKey]:
+def _missing(own: MeasureBlocks, items: list[MeasureBlocks], share: float, min_key_count: int) -> list[MissingKey]:
     rows: list[MissingKey] = []
     for name in KEY_BLOCKS:
         mine = _keys(own.get(name))

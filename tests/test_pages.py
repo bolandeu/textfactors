@@ -33,9 +33,7 @@ BLOCKS = (
 
 def test_each_fixture_has_a_reference_capture() -> None:
     assert len(PAGES) == 6
-    assert {page.stem for page in PAGES} == {
-        path.stem for path in (FIXTURES / "reference").glob("*.json")
-    }
+    assert {page.stem for page in PAGES} == {path.stem for path in (FIXTURES / "reference").glob("*.json")}
 
 
 @pytest.mark.parametrize("page", PAGES, ids=lambda page: page.stem)
@@ -52,10 +50,7 @@ def test_page_matches_reference_capture(page: Path) -> None:
 
 
 def test_html_drops_noindex_and_nested_noise_but_retains_links_and_structure() -> None:
-    start = (
-        "<html><head><title>Доставка воды</title>"
-        '<meta name="description" content="Вода в офис"></head><body>'
-    )
+    start = '<html><head><title>Доставка воды</title><meta name="description" content="Вода в офис"></head><body>'
     body = (
         "<h1>Доставка</h1><h2>Цены</h2><h3>Тарифы</h3><h2></h2>"
         '<p>Текст <a href="/cena">цена</a> авто</p><ul><li>Один</li><li>Два</li></ul>'
@@ -152,9 +147,7 @@ def test_page_chrome_is_not_measured_as_content() -> None:
     )
     result = measure_html(f"<html><body>{body}</body></html>")
     assert result["structure"]["h2_count"] == 0
-    assert result["structure"]["heading_tree"] == [
-        {"level": 1, "text": "Таможенный представитель", "children": []}
-    ]
+    assert result["structure"]["heading_tree"] == [{"level": 1, "text": "Таможенный представитель", "children": []}]
     assert result["blocks"]["text"] == measure_text(
         "Оформляем импортные грузы и консультируем по внешнеэкономической деятельности."
     )
@@ -163,11 +156,7 @@ def test_page_chrome_is_not_measured_as_content() -> None:
 
 def test_plain_page_and_empty_html() -> None:
     result = measure_html("  Только  текст \n без  тегов ")
-    assert (
-        result["blocks"]["text"]
-        == result["blocks"]["text_links"]
-        == measure_text("Только текст без тегов")
-    )
+    assert result["blocks"]["text"] == result["blocks"]["text_links"] == measure_text("Только текст без тегов")
     assert result["blocks"]["h1"] == result["blocks"]["meta_description"] == measure_text("")
     assert result["structure"]["heading_tree"] == []
     with pytest.raises(ValueError, match="html"):
@@ -175,19 +164,14 @@ def test_plain_page_and_empty_html() -> None:
 
 
 def test_structure_counts_headings_up_to_h6() -> None:
-    html = (
-        "<h1>А</h1><h2>Б</h2><h3>В</h3><h4>Г</h4><h5>Д</h5><h6>Е</h6><h4>Ж</h4><p>Текст статьи.</p>"
-    )
+    html = "<h1>А</h1><h2>Б</h2><h3>В</h3><h4>Г</h4><h5>Д</h5><h6>Е</h6><h4>Ж</h4><p>Текст статьи.</p>"
     structure = measure_html(html)["structure"]
     assert [structure[f"h{level}_count"] for level in range(1, 7)] == [1, 1, 1, 2, 1, 1]
     assert structure["heading_tree"][0]["children"][0]["children"][0]["children"][0]["text"] == "Г"
 
 
 def test_page_block_keeps_chrome_for_volume_comparison() -> None:
-    html = (
-        "<nav><a href='/'>Меню сайта</a></nav><h1>Услуга</h1>"
-        "<p>Текст услуги.</p><footer>Подвал и контакты</footer>"
-    )
+    html = "<nav><a href='/'>Меню сайта</a></nav><h1>Услуга</h1><p>Текст услуги.</p><footer>Подвал и контакты</footer>"
     result = measure_html(html)
     assert result["blocks"]["text"]["words_total"] == 2
     assert result["blocks"]["page"]["words_total"] == 8

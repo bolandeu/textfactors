@@ -61,8 +61,7 @@ def _words(part: str, ignore: frozenset[str], stops: _StopWords, lemmas: _Lemmat
     forms = TOKEN.findall(part)
     is_stop = stops.picks([_fold(form) for form in forms])
     return [
-        Word(form, lemmas.lemma(form), stop, _fold(form) in ignore)
-        for form, stop in zip(forms, is_stop, strict=True)
+        Word(form, lemmas.lemma(form), stop, _fold(form) in ignore) for form, stop in zip(forms, is_stop, strict=True)
     ]
 
 
@@ -135,9 +134,7 @@ def _words_table(sentences: list[list[Word]]) -> tuple[Counter[str], dict[str, l
     return found, forms
 
 
-def _rows(
-    found: Counter[str], forms: dict[str, list[str]] | None, words_count: int, top_n: int
-) -> list[RepeatRow]:
+def _rows(found: Counter[str], forms: dict[str, list[str]] | None, words_count: int, top_n: int) -> list[RepeatRow]:
     rows: list[RepeatRow] = [
         {
             "key": key,
@@ -174,27 +171,15 @@ def _norms(classic: float, academic: float, water: float) -> dict[str, str]:
     else:
         academic_label = "переспам"
     return {
-        "nausea_classic": "в норме"
-        if classic <= 4
-        else "повышенная"
-        if classic <= 7
-        else "переспам",
+        "nausea_classic": "в норме" if classic <= 4 else "повышенная" if classic <= 7 else "переспам",
         "nausea_academic": academic_label,
-        "water_percent": "мало воды"
-        if water < 10
-        else "в норме"
-        if water <= 25
-        else "многовато воды",
+        "water_percent": "мало воды" if water < 10 else "в норме" if water <= 25 else "многовато воды",
     }
 
 
-def _check_options(
-    ignore_words: list[str] | None, stop_phrases: list[str] | None, top_n: int
-) -> None:
+def _check_options(ignore_words: list[str] | None, stop_phrases: list[str] | None, top_n: int) -> None:
     for name, values in (("ignore_words", ignore_words), ("stop_phrases", stop_phrases)):
-        if values is not None and (
-            not isinstance(values, list) or not all(isinstance(value, str) for value in values)
-        ):
+        if values is not None and (not isinstance(values, list) or not all(isinstance(value, str) for value in values)):
             raise InvalidArguments(f"{name} must be a list of strings or None.")
     if isinstance(top_n, bool) or not isinstance(top_n, int) or top_n < 0:
         raise InvalidArguments("top_n must be an integer of 0 or more.")
@@ -215,20 +200,14 @@ def measure_text(
     ignore = frozenset(_fold(word) for word in excluded)
     cut = _cut(text, stop_phrases or [])
     stop_words, lemmatizer = sk.stopwords(), sk.SemtoolsLemmatizer()
-    sentences = [
-        words
-        for part in SENTENCE.split(cut)
-        if (words := _words(part, ignore, stop_words, lemmatizer))
-    ]
+    sentences = [words for part in SENTENCE.split(cut) if (words := _words(part, ignore, stop_words, lemmatizer))]
     series = pd.Series([cut])
     clauses = [_words(phrase, ignore, stop_words, lemmatizer) for phrase in sk.split_text(series)]
     words_total = sum(len(words) for words in sentences)
     stops = sum(word.stop for words in sentences for word in words)
     ignored = sum(word.ignore for words in sentences for word in words)
     found, forms = _words_table(sentences)
-    stop_counter = Counter(
-        word.lemma for words in sentences for word in words if word.stop and not word.ignore
-    )
+    stop_counter = Counter(word.lemma for words in sentences for word in words if word.stop and not word.ignore)
     words_count = words_total - stops - ignored
     roots = len(found)
     top = max(found.values(), default=0)

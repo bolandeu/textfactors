@@ -90,9 +90,7 @@ def test_text_without_letters_has_zero_counts(text: str) -> None:
 
 def test_measure_text_options_and_same_lemma() -> None:
     text = "автомобилей автомобиля в интернет-магазине. Доставка срочно"
-    result = measure_text(
-        text, stop_phrases=["В Интернет-магазине"], ignore_words=["СРОЧНО"], top_n=1
-    )
+    result = measure_text(text, stop_phrases=["В Интернет-магазине"], ignore_words=["СРОЧНО"], top_n=1)
     assert (
         result["length"],
         result["sentences"],
@@ -112,10 +110,7 @@ def test_measure_text_rejects_negative_top_n() -> None:
 
 
 def test_average_uses_nearest_rank_and_only_items_carrying_the_block() -> None:
-    items = [
-        {"blocks": {"text": {"words_count": n, "boolean": True, "repeat_words_1": []}}}
-        for n in range(1, 11)
-    ]
+    items = [{"blocks": {"text": {"words_count": n, "boolean": True, "repeat_words_1": []}}} for n in range(1, 11)]
     items.append({"blocks": {"h1": {"length": 3}}})
     original = deepcopy(items)
     result = average(items)
@@ -137,9 +132,7 @@ def test_average_uses_nearest_rank_and_only_items_carrying_the_block() -> None:
             },
             "h1": {
                 "count": 1,
-                "metrics": {
-                    "length": {"mean": 3, "median": 3, "q25": 3, "q75": 3, "min": 3, "max": 3}
-                },
+                "metrics": {"length": {"mean": 3, "median": 3, "q25": 3, "q75": 3, "min": 3, "max": 3}},
             },
         },
         "skipped": ["headings", "links", "text_links", "title", "meta_description", "page"],
@@ -204,10 +197,7 @@ def test_pair_verdict_boundaries(a: float, b: float, ratio: float, verdict: str)
 
 def test_set_figures_exclude_own_and_use_zero_for_missing_metric() -> None:
     own = {"blocks": {"text": {"words_count": 5, "ttr": 0.5}}}
-    items = [
-        {"blocks": {"text": {"words_count": n, "ttr": 0.2222, "length": 100}}}
-        for n in (800, 700, 900)
-    ]
+    items = [{"blocks": {"text": {"words_count": n, "ttr": 0.2222, "length": 100}}} for n in (800, 700, 900)]
     result = compare_with_set(own, [*items, {"blocks": {"headings": {}}}])
     assert result["items"] == 3
     assert result["skipped"] == list(BLOCKS[1:])
@@ -339,10 +329,7 @@ def test_stop_words_list_shows_what_makes_water() -> None:
     rows = {row["word"]: row for row in result["stop_words"]}
     assert rows["это"]["count"] == 2
     assert rows["и"]["count"] == 1
-    assert all(
-        row["density"] == round(row["count"] / result["words_total"] * 100, 3)
-        for row in result["stop_words"]
-    )
+    assert all(row["density"] == round(row["count"] / result["words_total"] * 100, 3) for row in result["stop_words"])
     assert measure_text(text, top_n=1)["stop_words"] == result["stop_words"][:1]
     assert measure_text("Доставка грузов")["stop_words"] == []
 

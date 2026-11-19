@@ -33,9 +33,7 @@ def verdict(metric: str, own: float, *, q25: float, q75: float, median: float) -
 
 def _carried(a: MeasureBlocks, b: MeasureBlocks) -> list[str]:
     names = dict.fromkeys((*a, *b))
-    return [name for name in BLOCKS if name in names] + [
-        name for name in names if name not in BLOCKS
-    ]
+    return [name for name in BLOCKS if name in names] + [name for name in names if name not in BLOCKS]
 
 
 def _pair(metric: str, a: float, b: float) -> PairMetric:
@@ -50,11 +48,7 @@ def _pair(metric: str, a: float, b: float) -> PairMetric:
 
 def _block(a: dict | None, b: dict | None) -> dict[str, PairMetric]:
     left, right = numbers(a), numbers(b)
-    return {
-        metric: _pair(metric, value, right[metric])
-        for metric, value in left.items()
-        if metric in right
-    }
+    return {metric: _pair(metric, value, right[metric]) for metric, value in left.items() if metric in right}
 
 
 def compare(a: dict, b: dict, *, blocks: list[str] | None) -> dict:
@@ -62,10 +56,6 @@ def compare(a: dict, b: dict, *, blocks: list[str] | None) -> dict:
     left, right = measured_blocks(a, "a"), measured_blocks(b, "b")
     names = _carried(left, right) if blocks is None else select_blocks(blocks)
     return {
-        "blocks": {
-            name: _block(left[name], right[name])
-            for name in names
-            if name in left and name in right
-        },
+        "blocks": {name: _block(left[name], right[name]) for name in names if name in left and name in right},
         "skipped": [name for name in names if name not in left or name not in right],
     }

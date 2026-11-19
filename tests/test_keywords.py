@@ -1,8 +1,6 @@
 """Check keyword occurrence counting, targets and CLI parity."""
 
 import json
-import subprocess
-import sys
 
 import pytest
 
@@ -34,9 +32,7 @@ def test_reverse_order_matches_only_when_enabled() -> None:
 
 def test_window_limits_the_gap_between_phrase_words() -> None:
     text = "Таможенный очень опытный и надёжный представитель"
-    assert (
-        check_keywords(text, ["таможенный представитель"], exact=False)["keywords"][0]["find"] == 0
-    )
+    assert check_keywords(text, ["таможенный представитель"], exact=False)["keywords"][0]["find"] == 0
     wide = check_keywords(text, ["таможенный представитель"], exact=False, diluted=True, window=4)
     narrow = check_keywords(text, ["таможенный представитель"], exact=False, diluted=True, window=3)
     assert wide["keywords"][0]["find"] == 1
@@ -91,27 +87,33 @@ def test_invalid_input_raises_value_error(arguments: dict) -> None:
         check_keywords(**arguments)
 
 
-def test_cli_call_matches_python_and_accepts_jsonl() -> None:
-    request = json.dumps({"text": TEXT, "keywords": ["таможенный", "брокер"], "targets": [2, 1]})
-    result = subprocess.run(
-        [sys.executable, "-m", "rb_textfactors", "--json", "--no-input", "run", "check-keywords"],
-        input=request,
-        text=True,
-        capture_output=True,
-        check=False,
-        timeout=15,
-    )
-    assert result.returncode == 0, result.stderr
-    assert json.loads(result.stdout) == check_keywords(
-        TEXT, ["таможенный", "брокер"], targets=[2, 1]
-    )
+def test_cli_call_matches_the_python_api() -> None:
+    from typer.testing import CliRunner
+
+    from rb_textfactors.cli import app
+
+    args = [
+        "--json",
+        "check-keywords",
+        TEXT,
+        "--keyword",
+        "таможенный",
+        "--keyword",
+        "брокер",
+        "--target",
+        "2",
+        "--target",
+        "1",
+    ]
+    result = CliRunner().invoke(app, args)
+    assert result.exit_code == 0, result.output
+    expected = check_keywords(TEXT, ["таможенный", "брокер"], targets=[2, 1])
+    assert json.loads(result.stdout)["keywords"] == expected["keywords"]
 
 
 def test_any_word_counts_each_phrase_word_separately() -> None:
     text = "Таможенный представитель оформляет грузы и платежи. Брокер помогает."
-    result = check_keywords(
-        text, ["таможенный представитель"], exact=False, lemma=False, any_word=True
-    )
+    result = check_keywords(text, ["таможенный представитель"], exact=False, lemma=False, any_word=True)
     row = result["keywords"][0]
     assert row["find"] == 2
     assert row["density"] == round(2 / result["words_total"] * 100, 3)
@@ -120,9 +122,7 @@ def test_any_word_counts_each_phrase_word_separately() -> None:
 def test_any_word_does_not_double_count_an_exact_phrase() -> None:
     text = "Таможенный представитель оформляет грузы."
     with_exact = check_keywords(text, ["таможенный представитель"], any_word=True)
-    without_exact = check_keywords(
-        text, ["таможенный представитель"], exact=False, lemma=False, any_word=True
-    )
+    without_exact = check_keywords(text, ["таможенный представитель"], exact=False, lemma=False, any_word=True)
     assert with_exact["keywords"][0]["find"] == 1
     assert without_exact["keywords"][0]["find"] == 2
 

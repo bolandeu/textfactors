@@ -1,67 +1,161 @@
-[build-system]
-requires = ["pdm-backend>=2.4,<3"]
-build-backend = "pdm.backend"
-
 [project]
 name = "rb-textfactors"
-version = "0.1.0"
+# Version comes from the git tag vX.Y.Z (uv-dynamic-versioning) — never add `version =`.
+dynamic = ["version"]
 description = "Measure and compare text metrics and HTML pages offline."
 readme = "README.md"
-license = "ISC"
-license-files = ["LICENSE"]
+authors = [{ name = "Roman Bolandau" }]
 requires-python = ">=3.11"
-classifiers = ["Typing :: Typed"]
 dependencies = [
-    "interfacy>=0.11,<0.12",
-    "pandas>=3.0.6,<4",
+    "typer>=0.27,<0.29",
+    "rich>=13.7",
     "pydantic>=2.10,<3",
-    "rb-semkit>=0.2.11,<0.3",
+    "platformdirs>=4.2",
+    "tomli-w>=1.0",
+    "pandas>=3.0.6,<4",
     "selectolax>=1.0.1,<2",
-    # Semkit needs dataio; declare it here to select its private index explicitly.
+    "rb-semkit>=0.2.11,<0.3",
     "rb-dataio>=0.1.26,<0.2",
 ]
 
 [project.scripts]
-textfactors = "rb_textfactors._cli:main"
+textfactors = "rb_textfactors.cli:main"
 
-[dependency-groups]
-dev = [
-    "poethepoet>=0.35,<1",
-    "pytest>=8.3,<10",
-    "ruff>=0.11,<1",
-    "ty>=0.0.14,<1",
-]
-docs = [
-    "mkdocstrings[python]>=0.29,<2",
-    "zensical>=0.0.21,<1",
-]
+[project.urls]
+Repository = "https://homeserver.tailee01ab.ts.net:3000/bolandeu/rb-textfactors"
 
+[build-system]
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.uv-dynamic-versioning]
+vcs = "git"
+style = "pep440"
+fallback-version = "0.0.0"
+
+[tool.uv]
+# Rebuild the editable install when a commit or tag moves, so `--version` follows the tag.
+cache-keys = [{ file = "pyproject.toml" }, { git = { commit = true, tags = true } }]
+
+# Our packages come only from the Gitea registry: a version range in
+# `dependencies` ("rb-serp>=0.3") and a source line per package, never a git
+# tag. explicit = true: only the packages named in [tool.uv.sources] are looked
+# up there, and they are never taken from PyPI (an unrelated package of the
+# same name may live there).
+# [tool.uv.sources]
+# rb-serp = { index = "gitea" }
 [tool.uv.sources]
 rb-semkit = { index = "gitea" }
 rb-dataio = { index = "gitea" }
-
 [[tool.uv.index]]
 name = "gitea"
 url = "https://homeserver.tailee01ab.ts.net:3000/api/packages/bolandeu/pypi/simple"
 explicit = true
 
-[tool.ruff]
-target-version = "py311"
-line-length = 100
+[tool.hatch.build.targets.wheel]
+packages = ["src/rb_textfactors"]
 
-[tool.ruff.lint]
-select = ["E4", "E7", "E9", "F", "I", "UP", "B"]
+[tool.hatch.build.targets.wheel.force-include]
+# The installed CLI reads [[tool.rb.external]] from here (core/deps.py).
+"pyproject.toml" = "rb_textfactors/_pyproject.toml"
 
-[tool.ty.src]
-include = ["src", "tests"]
+[dependency-groups]
+# Mutation testing, run now and then and before big releases — not in the gate:
+# `uv run --group mutation mutmut run`, then `mutmut results` / `mutmut browse`.
+# Needs fork(): macOS/Linux (WSL on Windows). Settings: [tool.mutmut] below.
+mutation = ["mutmut>=3.3"]
+dev = [
+    "jsonschema>=4.23",
+    "pytest>=8.0",
+    "pyyaml>=6.0",  # .copier-answers.yml, the CI workflow, tests/contracts/*.yaml
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "syrupy>=4.8",
+    "ty>=0.0.80",
+]
+
+# External (non-Python) dependencies — every CLI this tool runs (require_cli,
+# shutil.which, subprocess with a literal program, npx). The gate checks this
+# list against the code both ways; doctor and require_cli read it at runtime;
+# the tools catalog reads it (the Standard, Technology).
+# [[tool.rb.external]]
+# name = "ffmpeg"
+# required = true               # false: the tool works without it (doctor stays healthy)
+# min_version = "6.0"           # optional
+# check = "ffmpeg -version"     # prints the version; default "<name> --version"
+# why = "transcodes the downloaded videos"
+# detect = false                # run via an injected runner / absolute path the gate can't see
+# dist = "rb-serp"              # for one of our CLIs: its distribution (default rb-<name>)
+# url = "https://github.com/bolandeu/serp"  # its repo: DEPENDENCY_TOO_OLD then prints a pinned install
+
+# Where sysadmin's tool-updater installs this tool after its first tag. The
+# installation is sysadmin's; this section only says where. homeserver: users
+# to install for (empty = build and publish only); mac: install on the Mac.
+# extras (optional): the extras to install with, e.g. extras = ["browser"].
+[tool.rb.install]
+homeserver = ["rbtools"]
+mac = true
+
+[tool.cli-generator]
+# Where scripts/check_command_docstrings.py (called by the project's checks)
+# looks for commands: a glob or a list of globs, relative to the repo root.
+commands = ["src/rb_textfactors/commands/*.py"]
+# gate check (the gate): extras to install before ruff/ty/pytest.
+# gate_extras = ["browser"]
 
 [tool.pytest.ini_options]
-addopts = "--strict-config --strict-markers"
+# Only tests/: mutmut leaves a copy of the tree in mutants/.
 testpaths = ["tests"]
+addopts = "--cov --cov-report=term-missing:skip-covered"
+# tests/test_help.py keeps help snapshots at tests/snapshots/help/<command>.txt
+# (the Standard, Commands), not in syrupy's own `__snapshots__/<test file>/` layout, so
+# syrupy warns it "can not relate" each file to its test. It can — by name.
+filterwarnings = ["ignore:(?s).*Can not relate snapshot:UserWarning"]
 
-[tool.poe.tasks]
-lint = "ruff check src tests"
-format-check = "ruff format --check src tests"
-types = "ty check"
-test = "pytest"
-check = ["lint", "format-check", "types", "test"]
+[tool.mutmut]
+source_paths = ["src/rb_textcheck"]
+also_copy = ["scripts/", "pyproject.toml"]  # tests read them (test_scripts.py, the distribution checks)
+pytest_add_cli_args = ["--no-cov"]  # fail_under would kill every mutant
+# only_mutate = ["*/core/normalize.py"]  # one module at a time on a big tool
+
+[tool.coverage.run]
+source = ["src"]
+# sysmon (default on 3.14) keeps a record per recompiled code object; Typer recompiles annotations on every invoke, so memory grows.
+core = "ctrace"
+
+[tool.coverage.report]
+# The template ships at ~94%; keep the bar where it is instead of letting
+# new commands land untested. Raise it, never lower it.
+fail_under = 90
+show_missing = true
+
+[tool.ty.terminal]
+# Only errors fail the gate; recent ty (>= 0.0.84) otherwise exits 1 on warnings too.
+# Legacy code that can't be fixed yet: downgrade specific rules instead of
+# ignoring them, e.g. [tool.ty.rules] possibly-unbound-attribute = "warn".
+error-on-warning = false
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "SIM", "RUF", "S", "T20", "TID251"]
+# Russian messages, comments and docstrings: Cyrillic letters are not confusables here.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "T201", "TID251"]  # assert is the point of a test; print in code strings; httpx for mocks
+"scripts/*" = ["S603", "S607", "T201"]  # subprocess with fixed argv lists (git, uv), no shell; scripts print to the console
+"src/*/providers/*" = ["TID251"]    # external APIs live here
+# Third-party copy (humanizer-ru lint.py, MIT): kept verbatim so diffs against upstream stay readable.
+"src/rb_textcheck/core/humanizer_lint.py" = ["UP031", "B905", "RUF007", "T201"]
+
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"httpx".msg = "Call external APIs through providers/ (subclass providers.HttpProvider)."
+
+[tool.ruff.lint.flake8-bugbear]
+# Typer's `param: T = typer.Option(...)` style is a call in a default on purpose.
+extend-immutable-calls = ["typer.Option", "typer.Argument"]

@@ -34,17 +34,12 @@ def _check_options(
 ) -> None:
     if not isinstance(text, str):
         raise InvalidArguments("text must be a string.")
-    if not isinstance(keywords, list) or not all(
-        isinstance(keyword, str) and keyword.strip() for keyword in keywords
-    ):
+    if not isinstance(keywords, list) or not all(isinstance(keyword, str) and keyword.strip() for keyword in keywords):
         raise InvalidArguments("keywords must be a list of non-blank strings.")
     if targets is not None:
         if not isinstance(targets, list) or len(targets) != len(keywords):
             raise InvalidArguments("targets must be a list with one value per keyword.")
-        if not all(
-            isinstance(target, int) and not isinstance(target, bool) and target >= 0
-            for target in targets
-        ):
+        if not all(isinstance(target, int) and not isinstance(target, bool) and target >= 0 for target in targets):
             raise InvalidArguments("targets must be whole numbers of 0 or more.")
     if not all(isinstance(flag, bool) for flag in (exact, lemma, diluted, reverse, any_word)):
         raise InvalidArguments("exact, lemma, diluted, reverse and any_word must be true or false.")
@@ -99,9 +94,9 @@ def _count(
     index = 0
     while index < len(lemmas):
         end: int | None = None
-        if exact and forms[index : index + size] == phrase_forms:
-            end = index + size - 1
-        elif lemma and lemmas[index : index + size] == phrase_lemmas:
+        if (exact and forms[index : index + size] == phrase_forms) or (
+            lemma and lemmas[index : index + size] == phrase_lemmas
+        ):
             end = index + size - 1
         elif diluted and lemmas[index] == phrase_lemmas[0]:
             end = _span(lemmas, phrase_lemmas, index, window)

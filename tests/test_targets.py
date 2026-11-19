@@ -10,9 +10,7 @@ def page(words: int, rows: list[tuple[str, int, float]]) -> dict:
         "blocks": {
             "text": {
                 "words_total": words,
-                "repeat_words_1": [
-                    {"key": key, "count": count, "density": density} for key, count, density in rows
-                ],
+                "repeat_words_1": [{"key": key, "count": count, "density": density} for key, count, density in rows],
             }
         }
     }
