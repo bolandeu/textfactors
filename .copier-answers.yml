@@ -1,6 +1,6 @@
 # Changes here will be overwritten by Copier.
-_commit: v0.3.1
-_src_path: gh:bolandeu/python-library-starter
+_commit: v1.28.1
+_src_path: https://github.com/bolandeu/python-package-gate.git
 dist_name: rb-textfactors
 project_description: A typed Python library with a generated CLI.
 project_name: textfactors
