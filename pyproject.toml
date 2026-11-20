@@ -176,6 +176,6 @@ ignore = ["RUF001", "RUF002", "RUF003"]
 extend-immutable-calls = ["typer.Option", "typer.Argument"]
 
 [tool.uv.sources]
-rb-semkit = { path = "../rb-semkit" }
-rb-dataio = { path = "../rb-dataio" }
+rb-semkit = { path = "../rb-semkit", editable = true }
+rb-dataio = { path = "../rb-dataio", editable = true }
 
