@@ -16,7 +16,7 @@ dependencies = [
     "tomli-w>=1.0",
     "pandas>=3.0.6,<4",
     "selectolax>=1.0.1,<2",
-    "rb-semkit>=0.2.11,<0.3",
+    "rb-semkit>=0.2,<0.3",
     "rb-dataio>=0.1.26,<0.2",
 ]
 
