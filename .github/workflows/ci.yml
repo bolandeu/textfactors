@@ -17,7 +17,10 @@ jobs:
       - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d
         with:
           python-version: ${{ matrix.python }}
-      - run: uv run --locked poe check
+      - run: uv run --locked ruff check .
+      - run: uv run --locked ruff format --check .
+      - run: uv run --locked ty check
+      - run: uv run --locked pytest -q
       - if: matrix.python == '3.14'
         run: uv run --locked --group docs zensical build --strict
       - run: uv build
