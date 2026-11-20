@@ -16,6 +16,7 @@ from rich.markup import escape
 from typer.core import TyperGroup
 from typer.main import get_command
 
+from .._distribution import TOOL
 from ..core.errors import Aborted, CliError, InvalidArguments
 from ..core.version import cli_name
 from . import human
@@ -43,7 +44,6 @@ __all__ = [
     "vecho",
 ]
 
-from .._distribution import TOOL
 
 _CLI_NAME = cli_name()
 _PACKAGE_NAME = __name__.split(".")[0]
