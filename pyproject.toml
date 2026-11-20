@@ -42,13 +42,6 @@ fallback-version = "0.0.0"
 # Rebuild the editable install when a commit or tag moves, so `--version` follows the tag.
 cache-keys = [{ file = "pyproject.toml" }, { git = { commit = true, tags = true } }]
 
-# Our packages come only from the Gitea registry: a version range in
-# `dependencies` ("rb-serp>=0.3") and a source line per package, never a git
-# tag. explicit = true: only the packages named in [tool.uv.sources] are looked
-# up there, and they are never taken from PyPI (an unrelated package of the
-# same name may live there).
-# [tool.uv.sources]
-# rb-serp = { index = "gitea" }
 [tool.hatch.build.targets.sdist]
 # What a release must not carry: the agent's own files, the forge configs and the dev tooling. The wheel is
 # narrow already (`packages = ["src/<pkg>"]`); this is about the sdist, which is otherwise a copy of the repo.
@@ -175,6 +168,7 @@ ignore = ["RUF001", "RUF002", "RUF003"]
 # Typer's `param: T = typer.Option(...)` style is a call in a default on purpose.
 extend-immutable-calls = ["typer.Option", "typer.Argument"]
 
+# Siblings resolve from disk: a version range in `dependencies` plus a `path` source, never an index.
 [tool.uv.sources]
 rb-semkit = { path = "../rb-semkit", editable = true }
 rb-dataio = { path = "../rb-dataio", editable = true }
