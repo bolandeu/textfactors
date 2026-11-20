@@ -176,10 +176,6 @@ ignore = ["RUF001", "RUF002", "RUF003"]
 extend-immutable-calls = ["typer.Option", "typer.Argument"]
 
 [tool.uv.sources]
-rb-semkit = { index = "gitea" }
-rb-dataio = { index = "gitea" }
+rb-semkit = { path = "../rb-semkit" }
+rb-dataio = { path = "../rb-dataio" }
 
-[[tool.uv.index]]
-name = "gitea"
-url = "https://homeserver.tailee01ab.ts.net:3000/api/packages/bolandeu/pypi/simple"
-explicit = true
