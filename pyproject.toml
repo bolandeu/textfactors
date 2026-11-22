@@ -24,7 +24,7 @@ dependencies = [
 textfactors = "rb_textfactors.cli:main"
 
 [project.urls]
-Repository = "https://homeserver.tailee01ab.ts.net:3000/bolandeu/rb-textfactors"
+Repository = "https://github.com/bolandeu/rb-textfactors"
 
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning"]
